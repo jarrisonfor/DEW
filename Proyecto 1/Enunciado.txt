@@ -1,0 +1,36 @@
+Practising with Variables and Flow Control Structures
+Design a HTML document 
+which includes Javascript code 
+which asks for the value of every variable, or more of them
+extracted from the given “Street picture”
+generates an equivalent picture in your browser
+Use document.write() to show the resulting html tags
+prompt() to ask for the amount and values of the variables
+alert() to show any other messages. 
+
+Take pictures from Internet to represent the images on the street and present the scene in at least three divisions.
+
+ASSESSMENT:
+
+1) Correctly indented and commented. 0.5
+
+2) Uses English in comments, messages, menus and variables.
+
+3) Robustness and error handling. 1
+
+4) The code is optimized. 1
+
+5) Uses at least 4 types of variables. 1
+
+6) Uses at least 4 control structures. 1
+
+7) The task is complete. 1
+
+8) The task is original and innovative (eg. introduces CSS). 1
+
+9) Variables names and other are in camel case and meaningful.
+
+10) Uses correctly all the proposed functions (alert, prompt, document.write) 1
+
+NOTE: Upload three files (.html .css. js) together in a compressed format.
+
