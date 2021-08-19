@@ -123,7 +123,7 @@ class SlidingPuzzle {
         let rankingData = JSON.parse(localStorage.getItem('ranking'));
         if (rankingData) {
             let position = 1;
-            rankingData.sort(function(a, b) {
+            rankingData.sort(function (a, b) {
                 return a[1] - b[1];
             }).forEach(row => {
                 let tr = document.createElement('tr');
@@ -248,6 +248,12 @@ class SlidingPuzzle {
             }
             localStorage.setItem('ranking', JSON.stringify(ranking));
             this.setRanking()
+            Swal.fire({
+                title: 'You won!',
+                text: `You have made ${this.playerMove} movements at ${this.playerTime} seconds`,
+                icon: 'info',
+                confirmButtonText: 'Cool!'
+            });
             this.resetStats();
         }
         this.playerWin = playerWin;

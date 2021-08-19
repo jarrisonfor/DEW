@@ -10,7 +10,7 @@
 
 ✔ A variable will be increased after moving a piece.
 
-☐ When the puzzle is finished a message will appear announcing the number of moves made.
+✔ When the puzzle is finished a message will appear announcing the number of moves made.
 
 ✔ Optionally you can include a Time Object that counts the minutes and seconds needed for solving the puzzle and a score with the best time or the lowest time need so far.
 
@@ -22,7 +22,7 @@ ASSESSMENT:
     ✔ Correctly indented.
     ☐ Correctly commented.
     ✔ Variables names in camel case and meaningful.
-    ☐ Usage of English in comments, messages, menus and variables.
+    ✔ Usage of English in comments, messages, menus and variables.
     ✔ Robustness and error handling.
     ✔ Code optimization.
     ✔ Modular functions for each task.
