@@ -1,27 +1,35 @@
-Design an online game for solving sliding puzzle. First create in the index.html file a 3x3 table with identifiers for each cell and any divisions you may need for showing messages using classes or identifiers. Then find any picture for the puzzle and cut it out in 9 pieces using any photo editor, discard one of them, the one on the right lower corner, and then show the remaining pieces in their correct order in the table of the document and with the gap corresponding to the discarded piece. Then, after pressing a START button, the pieces  will appear mixed up randomly and the game begins. The player will be able to click on the pieces neighboring to the gap to let them slide to its position (the piece and the gap swap places only if they are not placed diagonally). A variable will be increased after moving a piece. When the puzzle is finished a message will appear announcing the number of moves made. Optionally you can include a Time Object that counts the minutes and seconds needed for solving the puzzle and a score with the best time or the lowest time need so far.
+✔ Design an online game for solving sliding puzzle.
 
-Make use of functions, use an object for the puzzle that includes all properties and an auxiliary array to control the order of the pieces. Don't use the document.write(), alert () or prompt() methods any more.
+✘ First create in the index.html file a 3x3 table with identifiers for each cell and any divisions you may need for showing messages using classes or identifiers.
+
+✔ Then find any picture for the puzzle and cut it out in 9 pieces using any photo editor, discard one of them, the one on the right lower corner, and then show the remaining pieces in their correct order in the table of the document and with the gap corresponding to the discarded piece.
+
+✔ Then, after pressing a START button, the pieces  will appear mixed up randomly and the game begins.
+
+✔ The player will be able to click on the pieces neighboring to the gap to let them slide to its position (the piece and the gap swap places only if they are not placed diagonally).
+
+✔ A variable will be increased after moving a piece.
+
+☐ When the puzzle is finished a message will appear announcing the number of moves made.
+
+✔ Optionally you can include a Time Object that counts the minutes and seconds needed for solving the puzzle and a score with the best time or the lowest time need so far.
+
+✔ Make use of functions, use an object for the puzzle that includes all properties and an auxiliary array to control the order of the pieces.
+
+✔ Don't use the document.write(), alert () or prompt() methods any more.
 
 ASSESSMENT:
-
-1) Correctly indented and commented. Variables names in camel case and meaningful.
-
-2) Usage of English in comments, messages, menus and variables.
-
-3) Robustness and error handling.
-
-4) Code optimization.
-
-5) Modular functions for each task.
-
-6) Use of object for the puzzle.
-
-7) Use of user defined objects and built objects and their properties methods where possible (clock).
-
-8) Use of events.
-
-9) Use of the DOM
-
-10)Completion and Innovation
+    ✔ Correctly indented.
+    ☐ Correctly commented.
+    ✔ Variables names in camel case and meaningful.
+    ☐ Usage of English in comments, messages, menus and variables.
+    ✔ Robustness and error handling.
+    ✔ Code optimization.
+    ✔ Modular functions for each task.
+    ✔ Use of object for the puzzle.
+    ✔ Use of user defined objects and built objects and their properties methods where possible (clock).
+    ✔ Use of events.
+    ✔ Use of the DOM
+    ✔ Completion and Innovation
 
 NOTE: Upload three files (.html .css. js) in a compressed zip file wit your name.
