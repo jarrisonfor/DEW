@@ -1,0 +1,33 @@
+Modify YOUR finished scripts using JQUERY selectors, events,effects and animations, DOM manipulation and AJAX with JQuery where possible.
+
+a) Modify your script of activity three (cinema).
+
+b) Modify your script of activity four (puzzle).
+
+c) Modify your script of activity five (directory tree).
+
+d)Modify your script of activity six (form).
+
+Improve the original program if it was not working fully and add effects where possible.
+
+Assesment:
+
+1) Code is indented, commented and all in English.
+
+2) The new version is fully functional.
+
+3) All possible javascript code lines are translated into Jquery.
+
+4) Adds animations and effects with Jquery.
+
+5) Errors of the old version are fixed in the new version.
+
+6) New version is optimized (no repeated lines, modular functions...)
+
+7) New version is robust (no unexpected or default behaviours, clear messages... )
+
+8) Correct handling of events (event propagation,callback functions are correctly used...)
+
+9) Connections to Server are correctly handled.
+
+10) Addition of extra features.

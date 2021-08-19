@@ -1,0 +1,43 @@
+PART 1
+
+Design a form in HTML and CSS for signing in to an online shop that includes the following fields: Name (at least one starting with capital), Surname (no more than two separated by a space and each of them starting with capital),Spanish  Id card number, Date of Birth (in DD/MM/YYYY format), Spanish Postal Code, Valid E-mail, Spanish Telephone, Spanish Mobile, IBAN, Credit Card, Password (not visible containing at least 12 digits with letters, numbers and one symbol), Repeat password. The regular expressions are attributes to an object with the methods for TESTING them.
+
+Finally , if all fields are correct the data will be stored in another Javascript object and then locally in your computer after pressing a button "SAVE". You can check it in ~/.config/google-chrome/Default/Local Storage/
+
+Then After reloading the page, with a different button called "RETRIEVE" you will get the information back from the local folder into the object and show each piece of data in the corresponding field.
+
+If a field is not filled in correctly it will change into red color and a hint will appear telling the user what the correct format is.
+
+PART 2
+
+Add two more buttons "POST" and "GET". The former  should send the filled object to the server file "http://localhost/DEW/process.php". The form fields should go blank. Finally the latter should retrieve the data  from the same file and show all the fields in the form again.
+
+This should be the JSON object for interacting with the server: 
+
+{ "name" : "Pepe", "surname" : "Lopez Perez", "dni" : "12345678X" , "date": "22/09/2000", "cp": "35500", "mail" : "pepe@gmail.com","phone" :"928666666",
+
+"mobile" : " 666999666", "card": "4539955085883327", "iban" : "ES7921000813610123456789", "password" : "Pepe1234567890" }
+
+ASSESSMENT:
+
+1) Correctly indented and commented. Variables names in camel case and meaningful. Use of English in comments, messages, menus and variables.
+
+2) All regular expressions are correct.
+
+3) Events are correct and information appears when a field is wrong.
+
+4) The information is saved correctly in the local storage.
+
+5) The information is retrieved correctly form the local storage and shown in the fields.
+
+6) Uses objects for regular expressions with testing methods included and  also for the data from the fields .
+
+7) Sends the new data correctly to the server using the POST method .
+
+8) Retrieves the data correctly from the server using the GET method and shown in the corresponding fields.
+
+9) Code is optimized, modular and robust.
+
+10) Check connection errors and informs via console log.
+
+NOTE: Upload three files WITH YOUR NAME AND THE TASK NUMBER (.html .css. js) in a compressed format.
