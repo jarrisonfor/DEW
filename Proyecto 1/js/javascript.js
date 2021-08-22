@@ -1,54 +1,50 @@
-let validar = true
-
-const checkMatricula = /^[0-9]{4}[ -]?[A-Z]{3}$/i;
-const checkNumero = /^[0-9]{1,10}$/;
-const checkHora = /^(?:(?:([01]?\d|2[0-3]):)([0-5]?\d):)([0-5]?\d)$/;
-const checkSemaforo = /^verde|rojo|naranja$/i;
+const checkCarRegistration = /^[0-9]{4}[ -]?[A-Z]{3}$/i;
+const checkNumber = /^[0-9]{1,10}$/;
+const checkTime = /^(?:(?:([01]?\d|2[0-3]):)([0-5]?\d):)([0-5]?\d)$/;
+const checkTrafficLight = /^green|red|orange$/i;
 const checkBoolean = /^yes|no$/i;
-const checkTexto = /^[a-z ]{4,30}$/i;
+const checkText = /^[\d\w\s]{4,50}$/i;
 
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function askValidation(title) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
+// Collection and data assignment
 
-// formulario de preguntas y seteo de informacion
-var invalido = true;
+let invalid = true;
 
-// hora
-let hora = '20:20:20'
-invalido = false;
-while (invalido) {
-    hora = prompt(`Dime la hora`)
-    invalido = !checkHora.test(hora);
-    if (invalido) {
-        alert('Formato de la hora es incorrecto')
+// Time
+let time;
+invalid = true;
+while (invalid) {
+    time = prompt(`What time will it be?`)
+    invalid = !checkTime.test(time);
+    if (invalid) {
+        alert('Time format is incorrect')
     }
 }
 
-// coches
-let ncoches = 1;
-let matriculas = [];
-invalido = validar
-while (invalido) {
-    ncoches = prompt(`Dime el numero de coches`)
-    invalido = !checkNumero.test(ncoches);
-    if (invalido) {
-        alert('Formato del numero de coches incorrecto')
+// Cars
+let carRegistrations = [];
+let carQuantity = 0;
+invalid = true;
+while (invalid) {
+    carQuantity = prompt(`How many cars will there be?`)
+    invalid = !checkNumber.test(carQuantity);
+    if (invalid) {
+        alert('Please enter a correct number of cars')
     } else {
-        for (let i = 0; i < ncoches; i++) {
-            invalido = true;
-            while (invalido) {
-                matricula = prompt(`Dime la matricula del ${i + 1}º coche`)
-                invalido = !checkMatricula.test(matricula);
-                if (invalido) {
-                    alert('Formato de matricula incorrecto')
+        let carRegistration;
+        for (let i = 0; i < carQuantity; i++) {
+            invalid = true;
+            while (invalid) {
+                carRegistration = prompt(`Tell me the car registration of the ${i + 1}º car`)
+                invalid = !checkCarRegistration.test(carRegistration);
+                if (invalid) {
+                    alert('Incorrect car registration format')
                 } else {
-                    matriculas.push(matricula);
+                    carRegistrations.push(carRegistration);
                 }
             }
         }
@@ -56,45 +52,48 @@ while (invalido) {
 }
 
 // edificios
-let nedificios = 1;
-let edificios = [];
-invalido = validar
-while (invalido) {
-    nedificios = prompt(`Dime el numero de edificios`)
-    invalido = !checkNumero.test(nedificios);
-    if (invalido) {
-        alert('Formato del numero de edificios incorrecto')
+let shops = [];
+let shopQuantity = 0;
+invalid = true
+while (invalid) {
+    shopQuantity = prompt(`How many shops will there be?`)
+    invalid = !checkNumber.test(shopQuantity);
+    if (invalid) {
+        alert('Please enter a correct number of shops')
     } else {
-        for (let i = 0; i < nedificios; i++) {
-            edificios.push({})
-            invalido = true
-            while (invalido) {
-                nombre = prompt(`Dime el nombre de la ${i + 1}º tienda`)
-                invalido = !checkTexto.test(nombre);
-                if (invalido) {
-                    alert('El numero de portal introducido es incorrecto')
+        let shopName;
+        let shopNumber;
+        let shopOffer;
+        for (let i = 0; i < shopQuantity; i++) {
+            shops.push({})
+            invalid = true
+            while (invalid) {
+                shopName = prompt(`Tell me the name of the ${i + 1}º shop`)
+                invalid = !checkText.test(shopName);
+                if (invalid) {
+                    alert('The introduced name is invalid')
                 } else {
-                    edificios[i]['nombre'] = nombre;
+                    shops[i]['shopName'] = shopName;
                 }
             }
-            invalido = true
-            while (invalido) {
-                numero = prompt(`Dime el numero de portal de la ${i + 1}º tienda`)
-                invalido = !checkNumero.test(numero);
-                if (invalido) {
-                    alert('El numero de portal introducido es incorrecto')
+            invalid = true
+            while (invalid) {
+                shopNumber = prompt(`Tell me the portal number of the ${i + 1}º shop`)
+                invalid = !checkNumber.test(shopNumber);
+                if (invalid) {
+                    alert('The introduced portal number is invalid')
                 } else {
-                    edificios[i]['numero'] = numero;
+                    shops[i]['shopNumber'] = shopNumber;
                 }
             }
-            invalido = true
-            while (invalido) {
-                served = prompt(`Dame la oferta de la ${i + 1}º tienda`)
-                invalido = !checkTexto.test(served);
-                if (invalido) {
-                    alert('El numero de productos introducido es incorrecto')
+            invalid = true
+            while (invalid) {
+                shopOffer = prompt(`Tell me the offer of the ${i + 1}º shop`)
+                invalid = !checkText.test(shopOffer);
+                if (invalid) {
+                    alert('The offer introduced is invalid')
                 } else {
-                    edificios[i]['served'] = served;
+                    shops[i]['shopOffer'] = shopOffer;
                 }
             }
         }
@@ -102,60 +101,59 @@ while (invalido) {
 }
 
 
-// semaforo
-let semaforo = 'verde'
-invalido = validar
-while (invalido) {
-    semaforo = prompt(`Dime un color de semaforo`)
-    invalido = !checkSemaforo.test(semaforo);
-    if (invalido) {
-        alert('El color introducido es incorrecto')
+// Traffic Light
+let trafficLight;
+invalid = true;
+while (invalid) {
+    trafficLight = prompt(`Tell me a color of the traffic light`)
+    invalid = !checkTrafficLight.test(trafficLight);
+    if (invalid) {
+        alert('The color introduced is incorrect');
     }
 }
-let verde = semaforo == 'verde' ? 'iluminado' : ''
-let naranja = semaforo == 'naranja' ? 'iluminado' : ''
-let rojo = semaforo == 'rojo' ? 'iluminado' : ''
-let nocamina = naranja != '' || verde != '' ? 'iluminado' : ''
-let camina = rojo != '' ? 'iluminado' : ''
+let green = trafficLight.toLowerCase() == 'green' ? 'illuminated' : ''
+let orange = trafficLight.toLowerCase() == 'orange' ? 'illuminated' : ''
+let red = trafficLight.toLowerCase() == 'red' ? 'illuminated' : ''
+let dontWalk = orange != '' || green != '' ? 'illuminated' : ''
+let walk = red != '' ? 'illuminated' : ''
 
 // hackeando el sistema, no usar document.getelement para asignar estilos dinamicos
-let mayor = nedificios > ncoches ? nedificios : ncoches;
-let pantalla = screen.width;
+let higher = shopQuantity > carQuantity ? shopQuantity : carQuantity;
 let width = 850;
-let tipowidth = 'px';
-if (mayor < 2) {
+let widthType = 'px';
+if (higher < 2 || width * 2 < screen.width) {
     width = 1;
-    tipowidth = 'fr';
+    widthType = 'fr';
 }
 
 // creacion del html
 let html = `
-<div id="contenedor" style="grid-template-columns: 100px repeat(${mayor}, ${width}${tipowidth}) 100px;">
+<div id="container" style="grid-template-columns: 100px repeat(${higher}, ${width}${widthType}) 100px;">
     <div>
-        <div class="espacio"></div>
-        <div class="acera">
-            <div id="reloj">
-                ${hora}
+        <div class="area"></div>
+        <div class="sidewalk">
+            <div id="watch">
+                ${time}
             </div>
-            <div class="palo"></div>
+            <div class="pole"></div>
         </div>
-        <div class="carretera">
+        <div class="road">
             <div class="divisiona"></div>
             <div class="divisionb"></div>
         </div>
     </div>
 `;
 
-for (let i = 0; i < mayor; i++) {
+for (let i = 0; i < higher; i++) {
     html += `
         <div>
-            <div class="espacio">`;
-    if (edificios[i]) {
+            <div class="area">`;
+    if (shops[i]) {
         html += `
-                <div class="tienda">
-                    <div class="nombre">${edificios[i].nombre}</div>
-                    <div class="numero">${edificios[i].numero}</div>
-                    <div class="puerta">
+                <div class="shop">
+                    <div class="name">${shops[i].shopName}</div>
+                    <div class="number">${shops[i].shopNumber}</div>
+                    <div class="door">
                         <div>
                             <div></div>
                         </div>
@@ -164,8 +162,8 @@ for (let i = 0; i < mayor; i++) {
                         <div class="emoji">
                             &#${randomIntFromInterval(128512, 128580)}
                         </div>
-                        <div class="served">
-                            ${edificios[i].served}
+                        <div class="offer">
+                            ${shops[i].shopOffer}
                         </div>
                     </div>
                 </div>
@@ -173,16 +171,16 @@ for (let i = 0; i < mayor; i++) {
     }
     html += `
             </div>
-            <div class="acera"></div>
-            <div class="carretera">
+            <div class="sidewalk"></div>
+            <div class="road">
                 <div class="divisiona"></div>
                 <div class="divisionb"></div>
     `;
-    if (matriculas[i]) {
+    if (carRegistrations[i]) {
         html += `
-                <div class="coche">
+                <div class="car">
                     <img src="img/coche.png">
-                    <div class="matricula">${matriculas[i]}</div>
+                    <div class="carRegistration">${carRegistrations[i]}</div>
                 </div>
         `;
     }
@@ -194,20 +192,20 @@ for (let i = 0; i < mayor; i++) {
 
 html += `
     <div>
-        <div class="espacio"></div>
-        <div class="acera">
-            <div id="semaforo">
-                <div class="luz rojo ${rojo}"></div>
-                <div class="luz naranja ${naranja}"></div>
-                <div class="luz verde ${verde} "></div>
+        <div class="area"></div>
+        <div class="sidewalk">
+            <div id="trafficLight">
+                <div class="light red ${red}"></div>
+                <div class="light orange ${orange}"></div>
+                <div class="light green ${green} "></div>
             </div>
-            <div id="caminar">
-                <div class="no-puede-caminar  ${nocamina}">Dont Walk</div>
-                <div class="puede-caminar ${camina}">Walk</div>
+            <div id="walk">
+                <div class="${dontWalk}">Dont Walk</div>
+                <div class="${walk}">Walk</div>
             </div>
-            <div class="palo"></div>
+            <div class="pole"></div>
         </div>
-        <div class="carretera">
+        <div class="road">
             <div class="divisiona"></div>
             <div class="divisionb"></div>
         </div>

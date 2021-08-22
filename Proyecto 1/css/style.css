@@ -7,19 +7,19 @@ body {
 
 /* estructura */
 
-#contenedor {
+#container {
     height: 100vh;
     display: grid;
     grid-template-columns: 100px repeat(1, 1fr) 100px;
     grid-template-rows: 100%;
 }
 
-#contenedor>div {
+#container>div {
     display: grid;
     grid-template-rows: 40% 20% 40%;
 }
 
-.acera {
+.sidewalk {
     background-color: darkgray;
     display: grid;
     grid-template-columns: 100%;
@@ -28,7 +28,7 @@ body {
     padding: 10px;
 }
 
-.carretera {
+.road {
     display: grid;
     position: relative;
 }
@@ -42,7 +42,7 @@ body {
     background-color: rgb(44, 41, 41);
 }
 
-#reloj {
+#watch {
     border: 1px solid black;
     border-radius: 1000px;
     background-color: white;
@@ -56,7 +56,7 @@ body {
     align-self: flex-end;
 }
 
-#semaforo {
+#trafficLight {
     border: 1px solid black;
     border-radius: 1000px;
     background-color: black;
@@ -73,33 +73,33 @@ body {
 
 }
 
-.verde {
+.green {
     background-color: green;
     opacity: 0.3;
 }
 
-.rojo {
+.red {
     background-color: red;
     opacity: 0.3;
 }
 
-.naranja {
+.orange {
     background-color: orange;
     opacity: 0.3;
 }
 
-.iluminado {
+.illuminated {
     opacity: 1 !important;
 }
 
-.luz {
+.light {
     border-radius: 1000px;
     height: 20px;
     width: 20px;
     border: 1px solid white;
 }
 
-#caminar {
+#walk {
     border: 1px solid black;
     color: white;
     background-color: black;
@@ -115,11 +115,11 @@ body {
     align-self: center;
 }
 
-#caminar>div {
+#walk>div {
     opacity: 0.3;
 }
 
-.palo {
+.pole {
     border: 1px solid black;
     width: 10px;
     background-color: black;
@@ -129,11 +129,11 @@ body {
     grid-column: 1;
 }
 
-#contenedor>div:last-child>div.acera {
+#container>div:last-child>div.acera {
     grid-template-rows: 10% 80% 10%;
 }
 
-.coche {
+.car {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -150,14 +150,14 @@ body {
     justify-items: center;
 }
 
-.coche>img {
+.car>img {
     filter: invert(9%) sepia(72%) saturate(6330%) hue-rotate(5deg) brightness(93%) contrast(115%);
     width: 30vh;
     grid-row: 1/2;
     grid-column: 1;
 }
 
-.matricula {
+.carRegistration {
     text-align: center;
     border: 1px solid black;
     background-color: white;
@@ -170,13 +170,13 @@ body {
     height: 20px;
 }
 
-.espacio {
+.area {
     display: grid;
     align-items: center;
     justify-items: center;
 }
 
-.tienda {
+.shop {
     width: 80%;
     height: 100%;
     border: 1px solid black;
@@ -188,7 +188,7 @@ body {
     grid-template-rows: repeat(4, 25%);
 }
 
-.nombre {
+.name {
     height: 30%;
     margin: 25px;
     grid-column: 1/21;
@@ -203,11 +203,11 @@ body {
     font-size: calc((40vh - 4.5rem) / 7);
 }
 
-.tienda>div {
+.shop>div {
     border: 1px solid black;
 }
 
-.numero {
+.number {
     grid-column: 2/6;
     margin:10px 0;
     background-color: lightgrey;
@@ -218,7 +218,7 @@ body {
     justify-content: center;
 }
 
-.puerta {
+.door {
     grid-column: 2/6;
     grid-row: 3/10;
     background-color: brown;
@@ -232,7 +232,7 @@ body {
 
 }
 
-.puerta>div {
+.door>div {
     border: 1px solid black;
     margin: 10%;
     display: flex;
@@ -246,14 +246,14 @@ body {
     text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
 
-.served {
+.offer {
     text-align: center;
     color: white;
     font-size: calc((20vh - 4.5rem) / 7);
     text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
 
-.puerta>div>div {
+.door>div>div {
     border: calc((7vh - 4.5rem) / 7) solid black;
     background-color: black;
     border-radius: 1000px;
