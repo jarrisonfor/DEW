@@ -5,146 +5,72 @@ body {
     background-color: skyblue;
 }
 
+/* estructura */
+
 #contenedor {
-    position: relative;
     height: 100vh;
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 100px repeat(1, 1fr) 100px;
+    grid-template-rows: 100%;
 }
 
-#tiendas {
-}
-.tienda {
-    border: 1px solid black;
-    border-bottom: none;
-    margin-top: 40px;
-    background-color: white;
-}
-
-#coches {
+#contenedor>div {
     display: grid;
-    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-rows: 40% 20% 40%;
 }
 
-#acera {
-    z-index: 1;
+.acera {
     background-color: darkgray;
-}
-
-#divisiona {
-    border-bottom: 1px dashed white;
-    background-color: rgb(44, 41, 41);
-}
-
-#divisionb {
-    background-color: rgb(44, 41, 41);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.coche>img {
-    filter: invert(9%) sepia(72%) saturate(6330%) hue-rotate(5deg) brightness(93%) contrast(115%);
-}
-
-.matricula {
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 100px;
-    position: absolute;
-    z-index: ;
-}
-
-
-
-
-
-
-
-.nombre {
-    border: 1px solid black;
-    margin: 25px;
-    padding: 10px;
-    text-align: center;
-    color: white;
-    background-color: black;
-}
-.puerta-poster {
-}
-
-.numero {
-    margin-bottom: 15px;
-    background-color: lightgrey;
-    text-align: center;
-}
-
-.puerta-numero {
-}
-
-.numero,
-.puerta {
-    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+    justify-items: center;
     padding: 10px;
 }
 
-.served {
-    text-align: center;
-    color: white;
-    margin-top: 30px;
-    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-}
-
-.puerta {
-    border-bottom: none;
-    background-color: brown;
-}
-
-.puerta>div {
-    border: 1px solid black;
+.carretera {
+    display: grid;
     position: relative;
 }
 
-.puerta>div>div {
-    border: 1px solid black;
-    background-color: black;
-    border-radius: 1000px;
-    position: absolute;
-    top: 49%;
-    left: 96%;
-}
-.poster {
-    border: 1px solid black;
-    background-color: grey;
+.divisiona {
+    border-bottom: 3px dashed white;
+    background-color: rgb(44, 41, 41);
 }
 
-.emoji {
-    text-align: center;
-    margin-top: 10px;
-    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+.divisionb {
+    background-color: rgb(44, 41, 41);
 }
-
-/* -------------------no tan importante------------------ */
 
 #reloj {
-    position: absolute;
     border: 1px solid black;
-    top: 25%;
-    left: 17px;
     border-radius: 1000px;
     background-color: white;
+    width: 70px;
+    height: 70px;
     z-index: 3;
+    line-height: 70px;
     text-align: center;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: flex-end;
 }
 
 #semaforo {
-    position: absolute;
     border: 1px solid black;
-    top: 25%;
-    right: 30px;
     border-radius: 1000px;
     background-color: black;
+    width: 40px;
+    height: 80px;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: flex-end;
+
 }
 
 .verde {
@@ -168,39 +94,170 @@ body {
 
 .luz {
     border-radius: 1000px;
+    height: 20px;
+    width: 20px;
     border: 1px solid white;
 }
 
-.palo {
-    position: absolute;
-    top: 25%;
-    right: 30px;
-    border: 1px solid black;
-    background-color: black;
-    z-index: 2;
-}
-
-#palo1 {
-    top: 36vh;
-    left: 46px;
-}
-
-#palo2 {
-    top: 36vh;
-    right: 46px;
-}
-
 #caminar {
-    position: absolute;
     border: 1px solid black;
-    top: 42%;
     color: white;
-    right: 12px;
     background-color: black;
+    width: 80px;
+    height: 40px;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
 }
 
 #caminar>div {
     opacity: 0.3;
+}
+
+.palo {
+    border: 1px solid black;
+    width: 10px;
+    background-color: black;
+    z-index: 2;
+    margin-top: 10px;
+    grid-row: 1/4;
+    grid-column: 1;
+}
+
+#contenedor>div:last-child>div.acera {
+    grid-template-rows: 10% 80% 10%;
+}
+
+.coche {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 170px;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.coche>img {
+    filter: invert(9%) sepia(72%) saturate(6330%) hue-rotate(5deg) brightness(93%) contrast(115%);
+    width: 30vh;
+    grid-row: 1/2;
+    grid-column: 1;
+}
+
+.matricula {
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 1000px;
+    z-index: 1;
+    grid-row: 1/2;
+    grid-column: 1;
+    width: 100px;
+    height: 20px;
+}
+
+.espacio {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.tienda {
+    width: 80%;
+    height: 100%;
+    border: 1px solid black;
+    border-bottom: none;
+    margin-top: 40px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(4, 25%);
+}
+
+.nombre {
+    height: 30%;
+    margin: 25px;
+    grid-column: 1/21;
+    border: 1px solid black;
+    padding: 1%;
+    color: white;
+    background-color: black;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc((40vh - 4.5rem) / 7);
+}
+
+.tienda>div {
+    border: 1px solid black;
+}
+
+.numero {
+    grid-column: 2/6;
+    margin:10px 0;
+    background-color: lightgrey;
+    font-size: calc((30vh - 4.5rem) / 7);
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.puerta {
+    grid-column: 2/6;
+    grid-row: 3/10;
+    background-color: brown;
+    display: grid;
+}
+
+.poster {
+    grid-column: -12/-2;
+    grid-row: 2/4;
+    background-color: grey;
+
+}
+
+.puerta>div {
+    border: 1px solid black;
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.emoji {
+    font-size: calc((100vh - 4.5rem) / 7);
+    text-align: center;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.served {
+    text-align: center;
+    color: white;
+    font-size: calc((20vh - 4.5rem) / 7);
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.puerta>div>div {
+    border: calc((7vh - 4.5rem) / 7) solid black;
+    background-color: black;
+    border-radius: 1000px;
+    width: 7px;
+    height: 7px;
+    margin: 5%;
 }
