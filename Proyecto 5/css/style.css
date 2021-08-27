@@ -1,0 +1,45 @@
+body {
+    font-size: 2em;
+    padding: 30px;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li>span {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fa {
+    margin-right: 6px;
+}
+
+.fa-folder, .fa-folder-open {
+    color: orange;
+    -webkit-text-stroke: 0.3px black;
+}
+
+.fa-file {
+    -webkit-text-stroke: 0.3px black;
+    color: white;
+}
+
+button {
+    margin: 0 5px;
+}
+
+.hide {
+    display: none;
+}
+
+
