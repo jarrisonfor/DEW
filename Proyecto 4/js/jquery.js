@@ -1,10 +1,10 @@
-$(window).keydown(function(e) {
+$(window).on('keydown', function(e) {
     e.preventDefault();
     key = (e.keyCode) ? e.keyCode : e.which;
     $('.key.c' + key).addClass('keydown');
 });
 
-$(window).keyup(function(e) {
+$(window).on('keyup', function(e) {
     e.preventDefault();
     key = (e.keyCode) ? e.keyCode : e.which;
     $('.key.c' + key).removeClass('keydown');
