@@ -1,6 +1,6 @@
 class FileSystem {
 
-    init = () => {
+    init = () => { // All corresponding events are added (if there was a predefined structure)
         document.getElementById('search').addEventListener('keyup', this._search);
         document.querySelectorAll("li>span:first-child").forEach((toggler) => {
             toggler.addEventListener("click", (e) => this._toggle(toggler));
@@ -13,7 +13,7 @@ class FileSystem {
         });
     }
 
-    _delete = (e) => {
+    _delete = (e) => { // Delete an HTML element, if it is a folder, check that there is no file in that folder and in all of his subdirectorys
         let element = e.target.parentNode
         if (element.classList.contains('file')) {
             element.parentNode.removeChild(element);
@@ -25,7 +25,7 @@ class FileSystem {
         }
     }
 
-    _createFile = (name) => {
+    _createFile = (name) => { // Create the HTML structure of a file
         let file = document.createElement('li');
         file.classList.add('file');
         let icon = document.createElement('i');
@@ -43,7 +43,7 @@ class FileSystem {
         return file;
     }
 
-    _createFolder = (name) => {
+    _createFolder = (name) => { // Create the HTML structure of a folder
         let folder = document.createElement('li');
         folder.classList.add('folder');
         let span = document.createElement('span');
@@ -71,7 +71,7 @@ class FileSystem {
         return folder;
     }
 
-    _create = (e) => {
+    _create = (e) => { // Create a folder or file, but only if it does not exist where is trying to create it
         let name = document.getElementById('create').value;
         let ul = e.target.parentNode.querySelector('ul');
         let exist = false;
@@ -91,20 +91,20 @@ class FileSystem {
         }
     }
 
-    _setParentStyle = (element, ) => {
+    _setParentStyle = (element, ) => { // Remove the display style to all the parents until it reaches the root element
         if(element.id != 'root'){
             element.style.display = ''
             this._setParentStyle(element.parentElement)
         }
     }
 
-    _toggle = (toggler) => {
+    _toggle = (toggler) => { // Closes or opens the folder to which it was clicked
         toggler.parentElement.querySelector("ul").classList.toggle("hide");
         toggler.querySelector('i').classList.toggle('fa-folder');
         toggler.querySelector('i').classList.toggle('fa-folder-open');
     }
 
-    _search = (e) => {
+    _search = (e) => { // Search filter
         let value = e.target.value;
         let elements = document.querySelectorAll('#root ul, .file, .folder');
         if (value) {

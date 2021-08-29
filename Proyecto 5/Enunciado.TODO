@@ -12,7 +12,7 @@
 ✔ Use keyboard and mouse events applying the event listeners and the events propagation.
 
 ASSESSMENT:
-    ☐ Correctly indented and commented.
+    ✔ Correctly indented and commented.
     ✔ Variables names in camel case and meaningful.
     ✔ Use of English in comments, messages, menus and variables.
     ✔ Robustness (no errors in the functions of the program).
@@ -21,7 +21,7 @@ ASSESSMENT:
     ✔ Correct string management.
     ✔ Use of methods explained (appendChild, setAttribute....)
     ✔ Use of the DOM query selectors.
-    ✘ The task is complete and includes optional features.
+    ✔ The task is complete and includes optional features.
     ✔ Use of event listeners and event propagation.
 
 NOTE: Upload three files (.html .css. js) in a compressed format.

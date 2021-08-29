@@ -1,6 +1,6 @@
 ✔ Design an online game for solving sliding puzzle.
 
-✘ First create in the index.html file a 3x3 table with identifiers for each cell and any divisions you may need for showing messages using classes or identifiers.
+✔ First create in the index.html file a 3x3 table with identifiers for each cell and any divisions you may need for showing messages using classes or identifiers.
 
 ✔ Then find any picture for the puzzle and cut it out in 9 pieces using any photo editor, discard one of them, the one on the right lower corner, and then show the remaining pieces in their correct order in the table of the document and with the gap corresponding to the discarded piece.
 
@@ -20,7 +20,7 @@
 
 ASSESSMENT:
     ✔ Correctly indented.
-    ☐ Correctly commented.
+    ✔ Correctly commented.
     ✔ Variables names in camel case and meaningful.
     ✔ Usage of English in comments, messages, menus and variables.
     ✔ Robustness and error handling.

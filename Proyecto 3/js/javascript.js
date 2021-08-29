@@ -1,5 +1,5 @@
 class SlidingPuzzle {
-    constructor() {
+    constructor() { // Setting the variables of the puzzle
         this.rows = 3;
         this.columns = 3;
         this.game;
@@ -10,14 +10,12 @@ class SlidingPuzzle {
         this.interval;
     }
 
-    printGame = () => {
-        // this create a matrix for the puzzle, example:
+    printGame = () => { // We create the puzzle in HTML already resolved
         let matrix = new Array(this.rows);
         for (let i = 0; i < matrix.length; i++) {
             matrix[i] = new Array(this.columns);
         }
 
-        // this create the html content for the puzzle and a initial state of the puzzle
         let game = document.createElement('div');
         game.id = 'puzzle';
         game.style.display = 'grid';
@@ -37,18 +35,16 @@ class SlidingPuzzle {
         game.lastChild.id = 'whiteSquare';
         this.gameResolved = game;
 
-        // Print the html in the browser
         this.resolve(true);
     }
 
-    printMenu = () => {
-        // this create the html menu for the puzzle
+    printMenu = () => { // Create the menu on the left
         let menu = document.createElement('div');
         menu.id = 'menu';
         document.getElementById('app').appendChild(menu);
     }
 
-    printGameButtons = () => {
+    printGameButtons = () => { // Create the New Game buttons and solve
         let buttons = document.createElement('div');
         buttons.id = 'buttons'
         let newGame = document.createElement('button');
@@ -69,7 +65,7 @@ class SlidingPuzzle {
         document.getElementById('menu').appendChild(buttons)
     }
 
-    printPlayerStats = () => {
+    printPlayerStats = () => { // Create the current statistics of the player
         let playerStats = document.createElement('div');
         playerStats.id = 'stats';
         let movesText = document.createElement('span');
@@ -89,8 +85,7 @@ class SlidingPuzzle {
         document.getElementById('menu').appendChild(playerStats)
     }
 
-    printRanking = () => {
-        // Ranking header
+    printRanking = () => { // Create the ranking table
         let ranking = document.createElement('div');
         ranking.id = 'ranking';
         let rankingTitle = document.createElement('h1');
@@ -118,7 +113,7 @@ class SlidingPuzzle {
         this.setRanking();
     }
 
-    setRanking = () => {
+    setRanking = () => { // Insert data into the ranking table
         document.getElementById('rankingBody').innerHTML = null;
         let rankingData = JSON.parse(localStorage.getItem('ranking'));
         if (rankingData) {
@@ -141,7 +136,7 @@ class SlidingPuzzle {
         }
     }
 
-    newGame = () => {
+    newGame = () => { // Reset the puzzle and hide the square on the right down
         this.resolve(true);
         this.interval = setInterval(() => {
             this.playerTime++;
@@ -151,7 +146,7 @@ class SlidingPuzzle {
         this.suffle();
     }
 
-    resetStats() {
+    resetStats() { // Reset the player's statistics
         this.playerMove = 0;
         this.playerTime = 0;
         this.playerWin = false;
@@ -162,7 +157,7 @@ class SlidingPuzzle {
         document.getElementById('moves').innerText = 0;
     }
 
-    resolve = (init = false) => {
+    resolve = (init = false) => { // Solve the puzzle, if init is true does not check if the player has won
         let app = document.getElementById('app');
         if (this.game) {
             app.removeChild(this.game);
@@ -181,7 +176,7 @@ class SlidingPuzzle {
         this.resetStats();
     }
 
-    suffle = () => {
+    suffle = () => { // Mix Puzzle Squares
         Array.prototype.slice.call(this.game.childNodes)
             .sort(() => Math.random() - 0.5)
             .map((element, index, elements) => {
@@ -192,7 +187,7 @@ class SlidingPuzzle {
             });
     }
 
-    moveCell = (element) => {
+    moveCell = (element) => { // Move the cells depending on where the white square is and checks if the player has won in each movement
         let whiteSquare = document.getElementById('whiteSquare');
         if (element.style.visibility != 'hidden' && !this.playerWin && whiteSquare.style.visibility == 'hidden') {
             //Checking if white tile on the right
@@ -224,12 +219,12 @@ class SlidingPuzzle {
         }
     }
 
-    swapCells = (element1, element2) => {
+    swapCells = (element1, element2) => { // Exchanges the cells of place in the puzzle
         [element1.style.gridColumnStart, element2.style.gridColumnStart] = [element2.style.gridColumnStart, element1.style.gridColumnStart];
         [element1.style.gridRowStart, element2.style.gridRowStart] = [element2.style.gridRowStart, element1.style.gridRowStart];
     }
 
-    checkWin = () => {
+    checkWin = () => { // Check if the player win and if so, it set in the ranking his time and movements
         let playerWin = true;
         this.game.childNodes.forEach(element => {
             if (element.dataset.row != element.style.gridRowStart || element.dataset.column != element.style.gridColumnStart) {
