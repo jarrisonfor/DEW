@@ -49,77 +49,81 @@ class Theatre {
         html += `
             </div>
         </div>`
-
-        document.write(html);
-        document.close();
+        return new Promise((resolve, reject) => {
+            document.write(html);
+            document.close();
+            setTimeout(function () {
+                resolve(true)
+            }, 250);
+        });
     }
 
-    checkSeat = (row, column) => {
+    _checkSeat = (row, column) => {
         if (typeof this.reservations[row] == 'undefined' || typeof this.reservations[row][column] == 'undefined' || this.reservations[row][column]) {
             return false;
         }
         return true;
     }
 
-    bookSeat = (row, column) => {
+    _bookSeat = (row, column) => {
         this.reservations[row][column] = 1;
         this.totalPrice += this.ticketPrice;
-        film.createHtml();
+        return film.createHtml();
     }
 
-    releaseSeat = (row, column) => {
+    _releaseSeat = (row, column) => {
         this.reservations[row][column] = 0;
         this.totalPrice -= this.ticketPrice;
     }
 
-    askForCoordinates = () => {
+    askForCoordinates = async () => {
         let seat = prompt(`Give me the seat coordinates you want to book in format: <row>-<column>`);
         if (!this.checkSeatFormat.test(seat)) {
             alert('Incorrect format, try again.')
             return this.askForCoordinates();
         }
         let [row, column] = seat.split('-');
-        if (!this.checkSeat(row - 1, column - 1)) {
+        if (!this._checkSeat(row - 1, column - 1)) {
             alert('Sorry, that seat dont exist or is already booked, Select another seat.')
             return this.askForCoordinates();
         }
         this.userSelectedSeats.push(seat);
-        this.bookSeat(row - 1, column - 1);
-        return this.askForMoreCoordinates();
+        await this._bookSeat(row - 1, column - 1);
+        return this._askForMoreCoordinates();
     }
 
-    askForMoreCoordinates = () => {
+    _askForMoreCoordinates = () => {
         let question = prompt('Do you want to book another seat? give me a number: \n 1. yes \n 2. no');
         if (!this.checkOption.test(question)) {
             alert('Incorrect option number, try again.')
-            return this.askForMoreCoordinates();
+            return this._askForMoreCoordinates();
         }
         if (question == 1) {
             return this.askForCoordinates();
         }
-        return this.askForConfirmation();
+        return this._askForConfirmation();
     }
 
-    askForConfirmation = () => {
+    _askForConfirmation = async () => {
         let question = prompt(`These are the seats you have chosen: \n ${this.userSelectedSeats.join(', ')}. \n Do you want to confirm your choice? give me a number: \n 1. yes \n 2. no`);
         if (!this.checkOption.test(question)) {
             alert('Incorrect option number, try again.');
-            return this.askForConfirmation();
+            return this._askForConfirmation();
         }
         if (question == 2) {
-            this.userSelectedSeats.forEach((seat) => {
+            this.userSelectedSeats.forEach(async (seat) => {
                 let [row, column] = seat.split('-');
-                this.releaseSeat(row - 1, column - 1);
+                this._releaseSeat(row - 1, column - 1);
             });
             this.userSelectedSeats = [];
+            await this.createHtml();
             return this.askForCoordinates();
         }
-        return this.getTotalPrice();
+        return this._finishForm();
     }
 
-    getTotalPrice = () => {
+    _finishForm = () => {
         alert(`The total to be paid is: ${this.totalPrice}€`);
-        true;
     }
 
 }
@@ -148,8 +152,6 @@ switch (parseInt(film)) {
         film = new Theatre('Spirited Away', 3, 10, 15, 5);
         break;
 }
-film.createHtml();
-
-setTimeout(() => {
-        film.askForCoordinates();
-}, 1000)
+film.createHtml().then(() => {
+    film.askForCoordinates();
+});
