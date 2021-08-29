@@ -1,0 +1,32 @@
+body {
+    background-color: lightslategrey;
+}
+
+#seats {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#seats img {
+    -webkit-filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8);
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8);
+}
+
+img {
+    width: 50%;
+}
+
+#seats > .booked {
+    -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}
+
+#info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#info > img {
+    width: 9vw;
+}

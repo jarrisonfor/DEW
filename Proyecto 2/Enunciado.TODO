@@ -1,34 +1,24 @@
-☐ Design a Web page for booking cinema seats.
-
-☐ The user will first have to choose one among  of at least three films in a given list.
-
-☐ Each film is shown in a different theatre, each with a different amount of seats.
-
-☐ Every theatre will be a javascript object with at least the following properties: number of seat rows, number of seat columns, name of the film, ticket price and an array of arrays as data structure showing wether the seats are free plus at least two methods: one for booking and another one for freeing the seats.
-
-☐ Then it will show an html table using document.write that  contains all the seats in the cinema, their prices and availability (green if free or red if occupied).
-
+✔ Design a Web page for booking cinema seats.
+✔ The user will first have to choose one among  of at least three films in a given list.
+✔ Each film is shown in a different theatre, each with a different amount of seats.
+✔ Every theatre will be a javascript object with at least the following properties: number of seat rows, number of seat columns, name of the film, ticket price and an array of arrays as data structure showing wether the seats are free plus at least two methods: one for booking and another one for freeing the seats.
+✔ Then it will show an html table using document.write that  contains all the seats in the cinema, their prices and availability (green if free or red if occupied).
 ☐ The user will then have to choose the desired free places by row and column and obtain the total price of his choice.
-
 ☐ Finally he will be asked wether he wants to change his choice and repeat the process.
-
-☐ All the interaction with the user will be using prompt and alert.
-
-☐ This time use  separate js and ccs files loaded from the index.html file which will only contain the initial screen and more .html files if you need them.
-
-☐ Include also the images in the same folder and compress that folder in a single file with your name.
-
-☐ Finally upload it to the platform.
+✔ All the interaction with the user will be using prompt and alert.
+✔ This time use  separate js and ccs files loaded from the index.html file which will only contain the initial screen and more .html files if you need them.
+✔ Include also the images in the same folder and compress that folder in a single file with your name.
+✔ Finally upload it to the platform.
 
 ASSESSMENT:
     ☐ Correctly indented and commented.
-    ☐ Variables names in camel case and meaningful.
+    ✔ Variables names in camel case and meaningful.
     ☐ Usage of English in comments, messages, menus and variables.
-    ☐ Robustness and error handling.
-    ☐ Code optimization.
-    ☐ Modularity (Modular functions for each task).
-    ☐ Use of  multidimensional Arrays for managing data.
-    ☐ Use of Objects for each Theatre.
-    ☐ Use of Constructors for declaring objects.
-    ☐ Use of html  tables and links between pages.
-    ☐ 1Original and complete.
+    ✔ Robustness and error handling.
+    ✔ Code optimization.
+    ✔ Modularity (Modular functions for each task).
+    ✔ Use of  multidimensional Arrays for managing data.
+    ✔ Use of Objects for each Theatre.
+    ✔ Use of Constructors for declaring objects.
+    ✔ Use of html tables and links between pages.
+    ✔ Original and complete.
