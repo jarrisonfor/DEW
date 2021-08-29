@@ -8,10 +8,10 @@
 ✔ prompt() to ask for the amount and values of the variables
 ✔ alert() to show any other messages.
 
-Take pictures from Internet to represent the images on the street and present the scene in at least three divisions.
+✔ Take pictures from Internet to represent the images on the street and present the scene in at least three divisions.
 
 ASSESSMENT:
-    ☐ Correctly indented and commented. 0.5
+    ✔ Correctly indented and commented. 0.5
     ✔ Uses English in comments, messages, menus and variables.
     ✔ Robustness and error handling. 1
     ✔ The code is optimized. 1

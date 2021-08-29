@@ -5,7 +5,7 @@ const checkTrafficLight = /^green|red|orange$/i;
 const checkBoolean = /^yes|no$/i;
 const checkText = /^[\d\w\s]{4,50}$/i;
 
-function randomIntFromInterval(min, max) {
+function randomIntFromInterval(min, max) { // This function is for the generation of random Emojis
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -14,7 +14,7 @@ function randomIntFromInterval(min, max) {
 
 let invalid = true;
 
-// Time
+// Get time from user prompt and and validate them
 let time;
 invalid = true;
 while (invalid) {
@@ -25,7 +25,7 @@ while (invalid) {
     }
 }
 
-// Cars
+// Get the quantity of cars and their car registration plates from user prompt and and validate them
 let carRegistrations = [];
 let carQuantity = 0;
 invalid = true;
@@ -51,7 +51,7 @@ while (invalid) {
     }
 }
 
-// edificios
+// Get the quantity of shops and their names, portal number, and the offer from from user prompt and validate them
 let shops = [];
 let shopQuantity = 0;
 invalid = true
@@ -101,7 +101,7 @@ while (invalid) {
 }
 
 
-// Traffic Light
+// Get the color of the traffic light from user prompt and validate them
 let trafficLight;
 invalid = true;
 while (invalid) {
@@ -111,13 +111,15 @@ while (invalid) {
         alert('The color introduced is incorrect');
     }
 }
+
+// We assign the illuminated variables to the corresponding colors and walk
 let green = trafficLight.toLowerCase() == 'green' ? 'illuminated' : ''
 let orange = trafficLight.toLowerCase() == 'orange' ? 'illuminated' : ''
 let red = trafficLight.toLowerCase() == 'red' ? 'illuminated' : ''
 let dontWalk = orange != '' || green != '' ? 'illuminated' : ''
 let walk = red != '' ? 'illuminated' : ''
 
-// hackeando el sistema, no usar document.getelement para asignar estilos dinamicos
+// Depending on the screen, we want a type of style or another
 let higher = shopQuantity > carQuantity ? shopQuantity : carQuantity;
 let width = 850;
 let widthType = 'px';
@@ -126,7 +128,7 @@ if (higher < 2 || width * 2 < screen.width) {
     widthType = 'fr';
 }
 
-// creacion del html
+// HTML creation
 let html = `
 <div id="container" style="grid-template-columns: 100px repeat(${higher}, ${width}${widthType}) 100px;">
     <div>
