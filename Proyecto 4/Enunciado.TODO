@@ -1,28 +1,28 @@
-☐ Design a Virtual keyboard on a Web page where the upper half of the page represents the screen and the lower part represents a keyboard as real as you can using divisions and CSS only in the initial HTML page.
-☐ Add eventListeners to each virtual key (no onclick attributes allowed), so that when you click on each key the corresponding character appears on the screen division.
-☐ Also pressing the real keys on your keyboard will have the same effect.
-☐ Combining keys and clicks will also be possible.
-☐ Handle all possible combinations and cases such as: 
-    ☐ SPACE
-    ☐ RETURN
-    ☐ DELETE
-    ☐ SUPR. SHIFT
-    ☐ ALT GR...
-☐ Treat the whole keyboard as an object.
-☐ Use a string for adding or modifying the text in the upper division with the appropiate methods as part of the object's attributes.
-☐ Use Eventlisteners and optimize the code taking advantage of the event propagation.
+✔ Design a Virtual keyboard on a Web page where the upper half of the page represents the screen and the lower part represents a keyboard as real as you can using divisions and CSS only in the initial HTML page.
+✔ Add eventListeners to each virtual key (no onclick attributes allowed), so that when you click on each key the corresponding character appears on the screen division.
+✔ Also pressing the real keys on your keyboard will have the same effect.
+✔ Combining keys and clicks will also be possible.
+✔ Handle all possible combinations and cases such as: 
+    ✔ SPACE
+    ✔ RETURN
+    ✔ DELETE
+    ✔ SUPR. SHIFT
+    ✔ ALT GR...
+✔ Treat the whole keyboard as an object.
+✔ Use a string for adding or modifying the text in the upper division with the appropiate methods as part of the object's attributes.
+✔ Use Eventlisteners and optimize the code taking advantage of the event propagation.
 
 ASSESSMENT:
-    ☐ Correctly indented and commented.
-    ☐ Variables names in camel case and meaningful.
-    ☐ Use of English in comments, messages, menus and variables.
-    ☐ Code is robust and optimized.
-    ☐ Handles all possible keys combinations.
-    ☐ Uses HTML divisions and CSS for designing the keyboard.
-    ☐ Use of Strings and its methods for the screen division
-    ☐ Use of an object for the whole keyboard with methods for each task.
-    ☐ Use of DOM query selectors and other.
-    ☐ Correct use of Eventlisteners and event propagation.
-    ☐ The task is complete and original.
+    ✔ Correctly indented and commented.
+    ✔ Variables names in camel case and meaningful.A
+    ✔ Use of English in comments, messages, menus and variables.
+    ✔ Code is robust and optimized.
+    ✔ Handles all possible keys combinations.
+    ✔ Uses HTML divisions and CSS for designing the keyboard.
+    ✔ Use of Strings and its methods for the screen division
+    ✔ Use of an object for the whole keyboard with methods for each task.
+    ✔ Use of DOM query selectors and other.
+    ✔ Correct use of Eventlisteners and event propagation.
+    ✔ The task is complete and original.
 
 NOTE: Upload all files (.html .css .js) in a compressed format with YOURNAME-PRJ4.

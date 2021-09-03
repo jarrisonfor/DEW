@@ -1,5 +1,5 @@
 class FormValidation {
-    constructor() {
+    constructor() { // Setting the variables of the validation
         this.regex = {
             name: /^[A-Z]\w+$/,
             surname: /^[A-Z]\w+ [A-Z]\w+$/,
@@ -18,7 +18,7 @@ class FormValidation {
         this.inputs = document.querySelectorAll('input');
     }
 
-    init = () => {
+    init = () => { // All corresponding events are added
         this.inputs.forEach((input) => {
             input.addEventListener('focusout', this._validate);
             input.addEventListener('keyup', this._validate);
@@ -29,7 +29,7 @@ class FormValidation {
         document.getElementById('getHttp').addEventListener('click', this.getHttp)
     }
 
-    _dniChecker = (dni) => {
+    _dniChecker = (dni) => { // Validation of the DNI lyrics
         var dniLetter = dni.substring(8, 9).toUpperCase();
         var dniNumber = parseInt(dni.substring(0, 8));
         var letters = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
@@ -37,7 +37,7 @@ class FormValidation {
         return dniLetter == correctLetter;
     }
 
-    _validate = (e) => {
+    _validate = (e) => { // Validate the input with its corresponding Regex and custom validation
         let input = e.target;
         let name = input.name;
         let result = this.regex[name].test(input.value);
@@ -59,7 +59,7 @@ class FormValidation {
         return result;
     }
 
-    _checkAllInputs = () => {
+    _checkAllInputs = () => { // Check if all fields are valid
         let validation = true;
         for (let i = 0; i < this.inputs.length; i++) {
             if (!this._validate({ target: this.inputs[i] })) {
@@ -69,21 +69,21 @@ class FormValidation {
         return validation;
     }
 
-    _clearInputs = () => {
+    _clearInputs = () => { // Clean all fields
         this.inputs.forEach((input) => {
             input.value = ''
             input.className = 'form-control';
         });
     }
 
-    _setInputs = (data) => {
+    _setInputs = (data) => { // Replace the value of the inputs with the data
         this.inputs.forEach((input) => {
             input.value = data[input.name];
         });
         document.getElementById('repeatPassword').value = data.password;
     }
 
-    _getObject = () => {
+    _getObject = () => { // Get all the data of the inputs and return it
         let data = {};
         this.inputs.forEach((input) => {
             data[input.name] = input.value;
@@ -92,20 +92,20 @@ class FormValidation {
         return data;
     }
 
-    setStorage = () => {
+    setStorage = () => { // Save the values from the inputs in the localStorage
         if (this._checkAllInputs()) {
             localStorage.setItem('person', JSON.stringify(this._getObject()));
             this._clearInputs();
         }
     }
 
-    getStorage = () => {
+    getStorage = () => { // Get the values from the localStorage and set in the inputs fields
         let data = JSON.parse(localStorage.getItem('person'));
         this._setInputs(data);
         this._checkAllInputs();
     }
 
-    postHttp = () => {
+    postHttp = () => { // Make a http post whit the inputs values (need to test whit the teacher)
         if (this._checkAllInputs()) {
             fetch('http://localhost/DEW/process.php', {
                 method: 'POST',
@@ -124,7 +124,7 @@ class FormValidation {
         }
     }
 
-    getHttp = () => {
+    getHttp = () => { // Make a http get (need to test whit the teacher)
         fetch('http://localhost/DEW/process.php')
             .then((e) => {
                 return e.json();
