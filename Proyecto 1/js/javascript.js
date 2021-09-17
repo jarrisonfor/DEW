@@ -3,7 +3,7 @@ const checkNumber = /^[0-9]{1,10}$/;
 const checkTime = /^(?:(?:([01]?\d|2[0-3]):)([0-5]?\d):)([0-5]?\d)$/;
 const checkTrafficLight = /^green|red|orange$/i;
 const checkBoolean = /^yes|no$/i;
-const checkText = /^[\d\w\s]{4,50}$/i;
+const checkText = /^.{4,50}$/i;
 
 function randomIntFromInterval(min, max) { // This function is for the generation of random Emojis
     return Math.floor(Math.random() * (max - min + 1) + min);
