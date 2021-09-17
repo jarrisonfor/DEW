@@ -123,7 +123,7 @@ let walk = red != '' ? 'illuminated' : ''
 let higher = shopQuantity > carQuantity ? shopQuantity : carQuantity;
 let width = 850;
 let widthType = 'px';
-if (higher < 2 || width * 2 < screen.width) {
+if (higher < 2) {
     width = 1;
     widthType = 'fr';
 }
