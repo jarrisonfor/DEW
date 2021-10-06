@@ -1,0 +1,464 @@
+/* general */
+#devices {
+    text-align: center;
+}
+
+/* screen */
+.imac {
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    font-size: 3px;
+    height: 120em;
+    width: 213.334em;
+    margin-bottom: 28em;
+    box-sizing: content-box;
+    border-radius: 5.67em;
+    padding: 9.5em 9.5em 8.84em 9.5em;
+    box-shadow: inset 9.5em 0 #111, inset -9.5em 0 #111, inset 0 9.5em #111, inset 0 -8.84em #111;
+    border-bottom: 21em solid transparent;
+    perspective: 8.34em;
+    -webkit-perspective: 8.34em;
+    background: linear-gradient(45deg, #898a8c, #e1e2e4)
+}
+
+.imac::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 21em);
+    left: calc(50% - 60em);
+    width: 120em;
+    height: 40em;
+    background: radial-gradient(farthest-side at right top, #7e7e7f, transparent) bottom 3em left 13em, radial-gradient(farthest-side at left top, #7e7e7f, transparent) bottom 3em right 13em, radial-gradient(farthest-side at center bottom, #a1a1a3, transparent) bottom 1em left 15em, radial-gradient(farthest-side at center bottom, #a1a1a3, transparent) bottom 1em left 6em, radial-gradient(farthest-side at center bottom, #a1a1a3, transparent) bottom 1em right 6em, linear-gradient(0deg, #e7e7e9 5%, #79797b 11%, #828280 17%, #9e9ea0 20%, #f1f1f1 30%, #eaeaea 40%, #77787c 100%) top left 17em, linear-gradient(#e7e7e9, #e7e7e9) bottom 1em left 14em, linear-gradient(-15deg, #e7e7e9 48%, transparent 52%) bottom 1em left, linear-gradient(15deg, #e7e7e9 48%, transparent 52%) bottom 1em right, linear-gradient(45deg, #9b9b9d 0%, #ececee 10%, #ececee 90%, #9b9b9d 100%) bottom left, radial-gradient(farthest-side at left top, transparent 48%, #7e7e7f 50%) top 23em left 14em, radial-gradient(farthest-side at right top, transparent 48%, #7e7e7f 50%) top 23em right 14em;
+    background-size: 4em 2em, 4em 2em, 90em 10em, 90em 4em, 90em 4em, 86em 39em, 92em 4em, 14em 4em, 14em 4em, 100% 1em, 7em 24em, 7em 24em;
+    border-bottom-left-radius: 23.34em 0.34em;
+    border-bottom-right-radius: 23.34em 0.34em;
+    background-repeat: no-repeat;
+    transform-origin: top;
+    transform: rotateX(3deg) scale3d(0.54, 0.4, 1);
+    -webkit-transform-origin: top;
+    -webkit-transform: rotateX(3deg) scale3d(0.54, 0.4, 1);
+    box-shadow: 0 2.3em 1.34em -2em, 0 2em 1.34em -2em
+}
+
+.imac::after {
+    content: '';
+    position: absolute;
+    top: 130.8em;
+    left: 103.17em;
+    transform: scale(0.19);
+    -webkit-transform: scale(0.19);
+    width: 25.17em;
+    height: 25.17em;
+    background: #111;
+    background-clip: content-box;
+    box-sizing: border-box;
+    padding: 1.67em;
+    border-radius: 166.67em;
+    box-shadow: 1.67em -738.34em 8.34em -8.34em #111, 1.67em -734.84em 0 -10em #474956, 1.67em -734.84em 0 -8.34em #1b1c26, 1.67em -734.84em 0 -6.67em #36373a, inset 14.17em 11.34em #c4c5c7, 30em 28em 0 #c4c5c7, 13em 24em 0 #111, 13em 36.17em 0 #111, 12em 38.5em 0 #111, 10.5em 41em 0 #111, 11em 46.67em 0 -5.17em #111, 12.17em 47em 0 -5.17em #111, 13.34em 45.84em 0 -5.17em #111, 6em 45.17em 0 -5.17em #111, 2.84em 44.84em 0 -5.17em #111, -1.5em 45.5em 0 -5.17em #111, -3.5em 46.17em 0 -5.17em #111, -6.17em 47.17em 0 -5.17em #111, -4em 33em 0 3.84em #111, -4.17em 35.67em 0 2.84em #111, -3.84em 40.34em 0 #111, -5.34em 39.67em 0 #111, -5.17em 42.5em 0 -1.34em #111, -5.67em 44.34em 0 -2.84em #111, 1.34em 42.67em 0 -2.84em #111, 4.5em 42.67em 0 -2.84em #111, -9.84em 32.34em 0 -1.67em #111, -10.17em 30.17em 0 -1.67em #111, -10.17em 27.84em 0 -1.67em #111, -9.84em 25.84em 0 -1.67em #111, -9.17em 24em 0 -1.67em #111, -8.17em 22.67em 0 -1.67em #111, -6.67em 22.84em 0 -1.67em #111, -4.34em 23.5em 0 -1.67em #111, -1.34em 24.34em 0 -1.67em #111, 7.17em 24em 0 -1.67em #111, 10.34em 23em 0 -1.67em #111, 3em 24.67em 0 -1.67em #111
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    .imac::after {
+        background: transparent;
+        box-shadow: 1.67em -738.34em 8.34em -8.34em #111, 1.67em -734.84em 0 -10em #474956, 1.67em -734.84em 0 -8.34em #1b1c26, 1.67em -734.84em 0 -6.67em #36373a, inset 14.17em 11.34em #c5c6c8, inset -64em -64.17em 0 -80.5em #111, 30em 28em 0.67em #c5c6c8, 13em 24em 0.67em #111, 13em 36.17em 0.67em #111, 12em 38.5em 0.67em #111, 10.5em 41em 0.67em #111, 11em 46.67em 1.17em -5.17em #111, 12.17em 47em 1.17em -5.17em #111, 13.34em 45.84em 1.17em -5.17em #111, 6em 45.17em 1.17em -5.17em #111, 2.84em 44.84em 1.17em -5.17em #111, -1.5em 45.5em 1.17em -5.17em #111, -3.5em 46.17em 1.17em -5.17em #111, -6.17em 47.17em 1.17em -5.17em #111, -4em 33em 1.17em 3.84em #111, -4.17em 35.67em 1.17em 2.84em #111, -3.84em 40.34em 0.67em #111, -5.34em 39.67em 0.67em #111, -5.17em 42.5em 1.17em -1.34em #111, -5.67em 44.34em 1.17em -2.84em #111, 1.34em 42.67em 1.17em -2.84em #111, 4.5em 42.67em 1.17em -2.84em #111, -9.84em 32.34em 1.17em -1.67em #111, -10.17em 30.17em 1.17em -1.67em #111, -10.17em 27.84em 1.17em -1.67em #111, -9.84em 25.84em 1.17em -1.67em #111, -9.17em 24em 1.17em -1.67em #111, -8.17em 22.67em 1.17em -1.67em #111, -6.67em 22.84em 1.17em -1.67em #111, -4.34em 23.5em 1.17em -1.67em #111, -1.34em 24.34em 1.17em -1.67em #111, 7.17em 24em 1.17em -1.67em #111, 10.34em 23em 1.17em -1.67em #111, 3em 24.67em 1.17em -1.67em #111
+    }
+}
+
+/* keyboard */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f8f8f8;
+}
+
+#keyboard {
+    z-index: 20;
+    margin: 50px auto 20px;
+    width: 800px;
+    height: 315px;
+    background: #bbb;
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.27, rgb(212, 216, 219)),
+            color-stop(0.64, rgb(213, 217, 220)),
+            color-stop(0.95, rgb(230, 233, 235)),
+            color-stop(1, rgb(191, 191, 191)));
+    background-image: -moz-linear-gradient(center bottom,
+            rgb(212, 216, 219) 27%,
+            rgb(213, 217, 220) 64%,
+            rgb(230, 233, 235) 95%,
+            rgb(191, 191, 191) 100%);
+    -moz-border-radius-topleft: 7px 21px;
+    -moz-border-radius-topright: 7px 21px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 7px 21px;
+    border-top-right-radius: 7px 21px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 50px 0 0;
+    -webkit-box-shadow:
+        inset 0 0 8px #bbb,
+        0 1px 0 #aaa,
+        0 4px 0 #bbb,
+        0 10px 30px #ddd;
+    -moz-box-shadow:
+        inset 0 0 8px #bbb,
+        0 1px 0 #aaa,
+        0 4px 0 #bbb,
+        0 10px 30px #ddd;
+    box-shadow:
+        inset 0 0 8px #bbb,
+        0 1px 0 #aaa,
+        0 4px 0 #bbb,
+        0 10px 30px #ddd;
+}
+
+ul {
+    list-style-type: none;
+    width: 784px;
+    margin: 0 auto;
+}
+
+li {
+    float: left;
+}
+
+.key {
+    display: block;
+    color: #aaa;
+    font: bold 9pt arial;
+    text-decoration: none;
+    text-align: center;
+    width: 44px;
+    height: 41px;
+    margin: 5px;
+    background: #eff0f2;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-top: 1px solid #f5f5f5;
+    -webkit-box-shadow:
+        inset 0 0 25px #e8e8e8,
+        0 1px 0 #c3c3c3,
+        0 2px 0 #c9c9c9,
+        0 2px 3px #333;
+    -moz-box-shadow:
+        inset 0 0 25px #e8e8e8,
+        0 1px 0 #c3c3c3,
+        0 2px 0 #c9c9c9,
+        0 2px 3px #333;
+    box-shadow:
+        inset 0 0 25px #e8e8e8,
+        0 1px 0 #c3c3c3,
+        0 2px 0 #c9c9c9,
+        0 2px 3px #333;
+    text-shadow: 0px 1px 0px #f5f5f5;
+    filter: dropshadow(color=#f5f5f5, offx=0, offy=1);
+}
+
+.key:active,
+.keydown {
+    color: #888;
+    background: #ebeced;
+    margin: 7px 5px 3px;
+    -webkit-box-shadow:
+        inset 0 0 25px #ddd,
+        0 0 3px #333;
+    -moz-box-shadow:
+        inset 0 0 25px #ddd,
+        0 0 3px #333;
+    box-shadow:
+        inset 0 0 25px #ddd,
+        0 0 3px #333;
+    border-top: 1px solid #eee;
+}
+
+.fn span {
+    display: block;
+    margin: 14px 5px 0 0;
+    text-align: right;
+    font: bold 6pt arial;
+    text-transform: uppercase;
+}
+
+#esc {
+    margin: 6px 15px 0 0;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+
+#numbers li a span {
+    display: block;
+}
+
+#numbers li a b {
+    margin: 3px 0 3px;
+    display: block;
+}
+
+#numbers li .alt b {
+    display: block;
+    margin: 0 0 3px;
+}
+
+#numbers li #delete span {
+    text-align: right;
+    margin: 23px 10px 0 0;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+#qwerty li a span {
+    display: block;
+    margin: 13px 0 0;
+    text-transform: uppercase;
+}
+
+#qwerty li #tab span {
+    text-align: left;
+    margin: 23px 0 0 10px;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+#qwerty li .alt b {
+    display: block;
+    margin: 3px 0 0;
+}
+
+#qwerty li .alt span {
+    margin: 2px 0 0;
+}
+
+
+#asdfg li a span {
+    display: block;
+    margin: 13px 0 0;
+    text-transform: uppercase;
+}
+
+#asdfg li .alt span {
+    margin: 0;
+    text-transform: lowercase;
+}
+
+#asdfg li .alt b {
+    display: block;
+    margin: 3px 0 0;
+}
+
+#asdfg li #caps b {
+    display: block;
+    background: #999;
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    margin: 9px 0 0 10px;
+    -webkit-box-shadow: inset 0 1px 0 #666;
+    -moz-box-shadow: inset 0 1px 0 #666;
+    box-shadow: inset 0 1px 0 #666;
+}
+
+#asdfg li #caps span {
+    text-align: left;
+    margin: 10px 0 0 10px;
+    font-size: 7.5pt;
+}
+
+#asdfg li #enter span {
+    text-align: right;
+    margin: 23px 10px 0 0;
+    font-size: 7.5pt;
+}
+
+
+#zxcvb li a span {
+    display: block;
+    margin: 13px 0 0;
+    text-transform: uppercase;
+}
+
+#zxcvb li .shiftleft span {
+    text-align: left;
+    margin: 23px 0 0 10px;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+#zxcvb li .shiftright span {
+    text-align: right;
+    margin: 23px 10px 0 0;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+#zxcvb li .alt b {
+    display: block;
+    margin: 4px 0 0;
+}
+
+#zxcvb li .alt span {
+    margin: 0;
+}
+
+
+#bottomrow li #fn span,
+#bottomrow li #control span,
+#bottomrow li #optionleft span,
+#bottomrow li #commandleft span {
+    display: block;
+    text-align: left;
+    margin: 31px 0 0 8px;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+#bottomrow li #optionright span,
+#bottomrow li #commandright span {
+    display: block;
+    text-align: right;
+    margin: 31px 8px 0 0;
+    font-size: 7.5pt;
+    text-transform: lowercase;
+}
+
+#bottomrow ol li #left span,
+#bottomrow ol li #right span,
+#bottomrow ol li #up span,
+#bottomrow ol li #down span {
+    display: block;
+    margin: 9px 0 0;
+}
+
+.fn {
+    height: 26px;
+    width: 46px;
+}
+
+#delete {
+    width: 72px;
+}
+
+#tab {
+    width: 72px;
+}
+
+#caps {
+    width: 85px;
+}
+
+#enter {
+    width: 85px;
+}
+
+.shiftleft,
+.shiftright {
+    width: 112px;
+}
+
+#fn,
+#control,
+.option,
+.command,
+#spacebar {
+    height: 49px;
+}
+
+#control {
+    width: 56px;
+}
+
+.option {
+    width: 46px;
+}
+
+.command {
+    width: 67px;
+}
+
+#spacebar {
+    width: 226px;
+}
+
+#left img,
+#up img,
+#down img,
+#right img {
+    border: none;
+}
+
+ul ol {
+    list-style-type: none;
+}
+
+#down {
+    height: 23px;
+    font-size: 8px;
+}
+
+#up,
+#left,
+#right {
+    height: 24px;
+    font-size: 8px;
+}
+
+#left,
+#right {
+    margin: 30px 5px 5px;
+}
+
+#left:active,
+#right:active {
+    margin: 32px 5px 3px;
+}
+
+#up {
+    margin: 5px 5px 1px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#up:active {
+    margin: 8px 5px -2px;
+}
+
+#down {
+    margin: 0 5px 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+#down:Active {
+    margin: 3px 5px 4px;
+}
+
+.text {
+    width:100%;
+    height: 100%;
+    resize: none;
+}
+
+.threeLetters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: top;
+    justify-items: top;
+}
+
+.threeLetters.twoDown > b {
+    grid-column: 1/3;
+    justify-self: center;
+}
+
+.threeLetters.twoUp > span {
+    grid-column: 1/3;
+    justify-self: center;
+}

@@ -1,28 +1,35 @@
-✔ Design a Virtual keyboard on a Web page where the upper half of the page represents the screen and the lower part represents a keyboard as real as you can using divisions and CSS only in the initial HTML page.
-✔ Add eventListeners to each virtual key (no onclick attributes allowed), so that when you click on each key the corresponding character appears on the screen division.
-✔ Also pressing the real keys on your keyboard will have the same effect.
-✔ Combining keys and clicks will also be possible.
-✔ Handle all possible combinations and cases such as: 
-    ✔ SPACE
-    ✔ RETURN
-    ✔ DELETE
-    ✔ SUPR. SHIFT
-    ✔ ALT GR...
-✔ Treat the whole keyboard as an object.
-✔ Use a string for adding or modifying the text in the upper division with the appropiate methods as part of the object's attributes.
-✔ Use Eventlisteners and optimize the code taking advantage of the event propagation.
+✔ Design an online game for solving sliding puzzle.
+
+✔ First create in the index.html file a 3x3 table with identifiers for each cell and any divisions you may need for showing messages using classes or identifiers.
+
+✔ Then find any picture for the puzzle and cut it out in 9 pieces using any photo editor, discard one of them, the one on the right lower corner, and then show the remaining pieces in their correct order in the table of the document and with the gap corresponding to the discarded piece.
+
+✔ Then, after pressing a START button, the pieces  will appear mixed up randomly and the game begins.
+
+✔ The player will be able to click on the pieces neighboring to the gap to let them slide to its position (the piece and the gap swap places only if they are not placed diagonally).
+
+✔ A variable will be increased after moving a piece.
+
+✔ When the puzzle is finished a message will appear announcing the number of moves made.
+
+✔ Optionally you can include a Time Object that counts the minutes and seconds needed for solving the puzzle and a score with the best time or the lowest time need so far.
+
+✔ Make use of functions, use an object for the puzzle that includes all properties and an auxiliary array to control the order of the pieces.
+
+✔ Don't use the document.write(), alert () or prompt() methods any more.
 
 ASSESSMENT:
-    ✔ Correctly indented and commented.
-    ✔ Variables names in camel case and meaningful.A
-    ✔ Use of English in comments, messages, menus and variables.
-    ✔ Code is robust and optimized.
-    ✔ Handles all possible keys combinations.
-    ✔ Uses HTML divisions and CSS for designing the keyboard.
-    ✔ Use of Strings and its methods for the screen division
-    ✔ Use of an object for the whole keyboard with methods for each task.
-    ✔ Use of DOM query selectors and other.
-    ✔ Correct use of Eventlisteners and event propagation.
-    ✔ The task is complete and original.
+    ✔ Correctly indented.
+    ✔ Correctly commented.
+    ✔ Variables names in camel case and meaningful.
+    ✔ Usage of English in comments, messages, menus and variables.
+    ✔ Robustness and error handling.
+    ✔ Code optimization.
+    ✔ Modular functions for each task.
+    ✔ Use of object for the puzzle.
+    ✔ Use of user defined objects and built objects and their properties methods where possible (clock).
+    ✔ Use of events.
+    ✔ Use of the DOM
+    ✔ Completion and Innovation
 
-NOTE: Upload all files (.html .css .js) in a compressed format with YOURNAME-PRJ4.
+NOTE: Upload three files (.html .css. js) in a compressed zip file wit your name.

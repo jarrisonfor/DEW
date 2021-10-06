@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+    <script src="js/javascript.js" defer></script>
+</head>
+
+<body>
+
+    <div id="devices">
+
+        <div class="imac" id="screen">
+            <textarea class="text"></textarea>
+        </div>
+        <div id="keyboard">
+            <ul>
+                <li><a href="#" class="key c27 fn"><span id="esc">esc</span></a></li>
+                <li><a href="#" class="key c112 fn"><span>F1</span></a></li>
+                <li><a href="#" class="key c113 fn"><span>F2</span></a></li>
+                <li><a href="#" class="key c114 fn"><span>F3</span></a></li>
+                <li><a href="#" class="key c115 fn"><span>F4</span></a></li>
+                <li><a href="#" class="key c116 fn"><span>F5</span></a></li>
+                <li><a href="#" class="key c117 fn"><span>F6</span></a></li>
+                <li><a href="#" class="key c118 fn"><span>F7</span></a></li>
+                <li><a href="#" class="key c119 fn"><span>F8</span></a></li>
+                <li><a href="#" class="key c120 fn"><span>F9</span></a></li>
+                <li><a href="#" class="key c121 fn"><span>F10</span></a></li>
+                <li><a href="#" class="key c122 fn"><span>F11</span></a></li>
+                <li><a href="#" class="key c123 fn"><span>F12</span></a></li>
+                <li><a href="#" class="key fn"><span>Eject</span></a></li>
+            </ul>
+            <ul id="numbers">
+                <li><a href="#" class="key c220 threeLetters twoDown"><b class="secondary">ª</b><span class="primary">º</span><span class="tertiary">\</span></a></li>
+                <li><a href="#" class="key c49 threeLetters twoUp"><b class="secondary">!</b><b class="tertiary">|</b><span class="primary">1</span></a></li>
+                <li><a href="#" class="key c50 threeLetters twoUp"><b class="secondary">"</b><b class="tertiary">@</b><span class="primary">2</span></a></li>
+                <li><a href="#" class="key c51 threeLetters twoUp"><b class="secondary">·</b><b class="tertiary">#</b><span class="primary">3</span></a></li>
+                <li><a href="#" class="key c52"><b class="secondary">$</b><span class="primary">4</span></a></li>
+                <li><a href="#" class="key c53"><b class="secondary">%</b><span class="primary">5</span></a></li>
+                <li><a href="#" class="key c54 threeLetters twoUp"><b class="secondary">&amp;</b><b class="tertiary">¬</b><span class="primary">6</span></a></li>
+                <li><a href="#" class="key c55"><b class="secondary">/</b><span class="primary">7</span></a></li>
+                <li><a href="#" class="key c56"><b class="secondary">(</b><span class="primary">8</span></a></li>
+                <li><a href="#" class="key c57"><b class="secondary">)</b><span class="primary">9</span></a></li>
+                <li><a href="#" class="key c48"><b class="secondary">=</b><span class="primary">0</span></a></li>
+                <li><a href="#" class="key c219 alt"><b class="secondary">?</b><span class="primary">'</span></a></li>
+                <li><a href="#" class="key c221"><b class="secondary">¿</b><span class="primary">¡</span></a></li>
+                <li><a href="#" class="key c8" id="delete"><span>Delete</span></a></li>
+            </ul>
+            <ul id="qwerty">
+                <li><a href="#" class="key c9" id="tab"><span>tab</span></a></li>
+                <li><a href="#" class="key c81"><span class="primary">q</span></a></li>
+                <li><a href="#" class="key c87"><span class="primary">w</span></a></li>
+                <li><a href="#" class="key c69"><span class="primary">e</span></a></li>
+                <li><a href="#" class="key c82"><span class="primary">r</span></a></li>
+                <li><a href="#" class="key c84"><span class="primary">t</span></a></li>
+                <li><a href="#" class="key c89"><span class="primary">y</span></a></li>
+                <li><a href="#" class="key c85"><span class="primary">u</span></a></li>
+                <li><a href="#" class="key c73"><span class="primary">i</span></a></li>
+                <li><a href="#" class="key c79"><span class="primary">o</span></a></li>
+                <li><a href="#" class="key c80"><span class="primary">p</span></a></li>
+                <li><a href="#" class="key c186 alt threeLetters twoDown"><b class="secondary">^</b><span class="primary">`</span><span class="tertiary">[</span></a></li>
+                <li><a href="#" class="key c187 alt threeLetters twoDown"><b class="secondary">*</b><span class="primary">+</span><span class="tertiary">]</span></a></li>
+                <li><a href="#" class="key c191 alt"><b class="primary">Ç</b><span class="tertiary">}</span></a></li>
+            </ul>
+            <ul id="asdfg">
+                <li><a href="#" class="key c20 alt" id="caps"><b></b><span>caps lock</span></a></li>
+                <li><a href="#" class="key c65"><span class="primary">a</span></a></li>
+                <li><a href="#" class="key c83"><span class="primary">s</span></a></li>
+                <li><a href="#" class="key c68"><span class="primary">d</span></a></li>
+                <li><a href="#" class="key c70"><span class="primary">f</span></a></li>
+                <li><a href="#" class="key c71"><span class="primary">g</span></a></li>
+                <li><a href="#" class="key c72"><span class="primary">h</span></a></li>
+                <li><a href="#" class="key c74"><span class="primary">j</span></a></li>
+                <li><a href="#" class="key c75"><span class="primary">k</span></a></li>
+                <li><a href="#" class="key c76"><span class="primary">l</span></a></li>
+                <li><a href="#" class="key c192"><span class="primary">ñ</span></a></li>
+                <li><a href="#" class="key c222 alt threeLetters twoDown"><b class="secondary">¨</b><span class="primary">´</span><span class="tertiary">{</span></a></li>
+                <li><a href="#" class="key c13 alt" id="enter"><span>enter</span></a></li>
+            </ul>
+            <ul id="zxcvb">
+                <li><a href="#" class="key c16 shiftleft"><span>Shift</span></a></li>
+                <li><a href="#" class="key c90"><span class="primary">z</span></a></li>
+                <li><a href="#" class="key c88"><span class="primary">x</span></a></li>
+                <li><a href="#" class="key c67"><span class="primary">c</span></a></li>
+                <li><a href="#" class="key c86"><span class="primary">v</span></a></li>
+                <li><a href="#" class="key c66"><span class="primary">b</span></a></li>
+                <li><a href="#" class="key c78"><span class="primary">n</span></a></li>
+                <li><a href="#" class="key c77"><span class="primary">m</span></a></li>
+                <li><a href="#" class="key c188 alt"><b class="secondary">;</b><span class="primary">,</span></a></li>
+                <li><a href="#" class="key c190 alt"><b class="secondary">:</b><span class="primary">.</span></a></li>
+                <li><a href="#" class="key c189 alt"><b class="secondary">_</b><span class="primary">-</span></a></li>
+                <li><a href="#" class="key c16 shiftright"><span>Shift</span></a></li>
+            </ul>
+            <ul id="bottomrow">
+                <li><a href="#" class="key" id="fn"><span>fn</span></a></li>
+                <li><a href="#" class="key c17" id="control"><span>control</span></a></li>
+                <li><a href="#" class="key c18 option" id="optionleft"><span>option</span></a></li>
+                <li><a href="#" class="key c91 command" id="commandleft"><span>command</span></a></li>
+                <li><a href="#" class="key c32" id="spacebar"></a></li>
+                <li><a href="#" class="key c91 command" id="commandright"><span>command</span></a></li>
+                <li><a href="#" class="key c18 option" id="optionright"><span>option</span></a></li>
+                <ol>
+                    <li><a href="#" class="key c37" id="left"><span>&#x25C0;</span></a></li>
+                    <li>
+                        <a href="#" class="key c38" id="up"><span>&#x25B2;</span></a>
+                        <a href="#" class="key c40" id="down"><span>&#x25BC;</span></a>
+                    </li>
+                    <li><a href="#" class="key c39" id="right"><span>&#x25B6;</span></a></li>
+                </ol>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
