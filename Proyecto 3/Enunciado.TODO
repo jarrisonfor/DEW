@@ -1,16 +1,16 @@
-☐ Modify Project 2 so that you do not use alert or prompt for showing messages but by modifying the innerText or inner Html of the DOM.
-☐ You will navigate from the front page to the other pages using the mouse.
-☐ Then choose the seats clicking on them and update the total price every time you select or unselect any seat.
-☐ Additionally you will have to store the array with the reserved seats so that when you choose again the same theatre the seats are still there.
+✔ Modify Project 2 so that you do not use alert or prompt for showing messages but by modifying the innerText or inner Html of the DOM.
+✔ You will navigate from the front page to the other pages using the mouse.
+✔ Then choose the seats clicking on them and update the total price every time you select or unselect any seat.
+✔ Additionally you will have to store the array with the reserved seats so that when you choose again the same theatre the seats are still there.
 
 ASSESSMENT:
-    ☐ Correctly indented and commented. Variables names in camel case and meaningful with comments, messages, menus and variables in English.
-    ☐ Uses Session storage for storing the taken seats.
-    ☐ Robustness and error handling.
-    ☐ Code optimization.
-    ☐ Modular functions for each task.
-    ☐ Use of  Arrays for managing data.
-    ☐ Use of Objects and Constructors for declaring objects.
-    ☐ Correct use of events.
-    ☐ Correct use of the DOM.
-    ☐ Complete and original
+    ✔ Correctly indented and commented. Variables names in camel case and meaningful with comments, messages, menus and variables in English.
+    ✔ Uses Session storage for storing the taken seats.
+    ✔ Robustness and error handling.
+    ✔ Code optimization.
+    ✔ Modular functions for each task.
+    ✔ Use of  Arrays for managing data.
+    ✔ Use of Objects and Constructors for declaring objects.
+    ✔ Correct use of events.
+    ✔ Correct use of the DOM.
+    ✔ Complete and original
