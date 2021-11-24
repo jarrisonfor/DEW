@@ -25,7 +25,7 @@ PART 2:
     ✔ Finally the latter should retrieve the data from the same file and show all the fields in the form again.
     ✔ Then  add  a button  "GET-DB" and another button "POST-DB"
     ✔ So that , instead of storing the object in a variables locally in the server, the values are in a data base
-    ☐ The data object has to be sent in JSON string and the server has to extract the fields after turning it back into an object
+    ✔ The data object has to be sent in JSON string and the server has to extract the fields after turning it back into an object
     ✔ he data base has to be created on the very same server using phpMyAdmin with all the fields needed for your form (ID card is the key)
     ✔ Then  you can enter any ID in the corresponding field that and  when pressed fires a callback function that retrieves the corresponding record from the database and shows the information in the corresponding fields overwriting whatever they had
 
@@ -65,8 +65,8 @@ ASSESSMENT:
         ✔ Use of English in comments, messages, menus and variables.
         ✔ Robustness and error handling.
         ✔ Correct use of Events and associated call back functions
-        ☐ Correct use of GET and POST methods for variables.
-        ☐ Correct use of GET and POST methods for the data base.
+        ✔ Correct use of GET and POST methods for variables.
+        ✔ Correct use of GET and POST methods for the data base.
         ✔ Adequate data structures such as Objects its attributes and methods
         ✔ User experience.
         ✔ Use of DOM query selectors or alternative selectors.
