@@ -22,60 +22,97 @@
                 <div class="form-group col">
                     <label for="name">Name</label>
                     <input class="form-control" type="text" name="name" id="name" />
+                    <div class="invalid-feedback">
+                        The name need has 3 letters or more.
+                        The name need start whit a uppercase letter.
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label for="surname">Surname</label>
                     <input class="form-control" type="text" name="surname" id="surname" />
+                    <div class="invalid-feedback">
+                        The surname need be 2 words and start whith uppercases.
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label for="dni">Dni</label>
                     <input class="form-control" type="text" name="dni" id="dni" />
+                    <div class="invalid-feedback">
+                        Need to be a valid DNI
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label for="date">Date of birth</label>
                     <input class="form-control" type="text" name="date" id="date" />
+                    <div class="invalid-feedback">
+                        Need to be a valid date format, example: 01/01/2020
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label for="cp">Postal Code</label>
                     <input class="form-control" type="text" name="cp" id="cp" />
+                    <div class="invalid-feedback">
+                        The postal code need to be a valid spanish format
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label for="mail">Mail</label>
                     <input class="form-control" type="email" name="mail" id="mail" />
+                    <div class="invalid-feedback">
+                        The email need to be a valid email
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label for="phone">Phone</label>
                     <input class="form-control" type="text" name="phone" id="phone" />
+                    <div class="invalid-feedback">
+                        Need to start whit the number 8 or 9 and have 9 numbers
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label for="mobile">Mobile</label>
                     <input class="form-control" type="text" name="mobile" id="mobile" />
+                    <div class="invalid-feedback">
+                        Need to start whit the number 6 or 7 and have 9 numbers
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label for="card">Credit card</label>
                     <input class="form-control" type="text" name="card" id="card" />
+                    <div class="invalid-feedback">
+                        Need to star whit the 4 number and have 12 digits
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label for="iban">Iban</label>
                     <input class="form-control" type="text" name="iban" id="iban" />
+                    <div class="invalid-feedback">
+                        Need to start whit 2 letters and 22 numbers
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label for="password">Password</label>
                     <input class="form-control" type="password" name="password" id="password" />
+                    <div class="invalid-feedback">
+                        Need contain at least 12 digits with letters, numbers and one symbol.
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label for="repeatPassword">Repeat password</label>
                     <input class="form-control" type="password" name="repeatPassword" id="repeatPassword" />
+                    <div class="invalid-feedback">
+                        Need to be the same password than the password field.
+                    </div>
                 </div>
             </div>
 
@@ -92,11 +129,21 @@
             <div class="row">
                 <div class="form-group col">
                     <button type="button" name="postHttp" id="postHttp"
-                        class="form-control btn mt-3 btn-outline-success btn-lg btn-block">Post</button>
+                        class="form-control btn mt-3 btn-outline-success btn-lg btn-block">Post - Process</button>
                 </div>
                 <div class="form-group col">
                     <button type="button" name="getHttp" id="getHttp"
-                        class="form-control btn mt-3 btn-outline-success btn-lg btn-block">Get</button>
+                        class="form-control btn mt-3 btn-outline-success btn-lg btn-block">Get - Process</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <button type="button" name="postDB" id="postDB"
+                        class="form-control btn mt-3 btn-outline-success btn-lg btn-block">Post - DB</button>
+                </div>
+                <div class="form-group col">
+                    <button type="button" name="getDB" id="getDB"
+                        class="form-control btn mt-3 btn-outline-success btn-lg btn-block">Get - DB</button>
                 </div>
             </div>
         </form>

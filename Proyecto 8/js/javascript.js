@@ -27,6 +27,8 @@ class FormValidation {
         document.getElementById('setStorage').addEventListener('click', this.setStorage)
         document.getElementById('postHttp').addEventListener('click', this.postHttp)
         document.getElementById('getHttp').addEventListener('click', this.getHttp)
+        document.getElementById('postDB').addEventListener('click', this.postDB)
+        document.getElementById('getDB').addEventListener('click', this.getDB)
     }
 
     _dniChecker = (dni) => { // Validation of the DNI lyrics
@@ -107,13 +109,23 @@ class FormValidation {
 
     postHttp = () => { // Make a http post whit the inputs values (need to test whit the teacher)
         if (this._checkAllInputs()) {
-            fetch('http://localhost/DEW/process.php', {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            var urlencoded = new URLSearchParams();
+            let data = this._getObject();
+            Object.keys(data).forEach((key) => {
+                urlencoded.append(key, data[key]);
+            });
+            var requestOptions = {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: this._getObject()
-            })
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            };
+            fetch("DEW/process.php", requestOptions)
+                .then((e) => {
+                    return e.json()
+                })
                 .then((e) => {
                     console.log(e)
                 })
@@ -125,17 +137,64 @@ class FormValidation {
     }
 
     getHttp = () => { // Make a http get (need to test whit the teacher)
-        fetch('http://localhost/DEW/process.php')
+        fetch('DEW/process.php')
             .then((e) => {
                 return e.json();
             })
             .then((data) => {
-                this._setInputs(data.data);
+                console.log(data)
+                this._setInputs(data);
                 this._checkAllInputs();
             })
             .catch((e) => {
                 console.log(e)
             })
+    }
+
+    postDB = () => { // Make a http post to db whit the inputs values (need to test whit the teacher)
+        if (this._checkAllInputs()) {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            var urlencoded = new URLSearchParams();
+            let data = this._getObject();
+            Object.keys(data).forEach((key) => {
+                urlencoded.append(key, data[key]);
+            });
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            };
+            fetch("DEW/processDB.php", requestOptions)
+                .then((e) => {
+                    return e.json()
+                })
+                .then((e) => {
+                    console.log(e)
+                })
+                .catch((e) => {
+                    console.log(e)
+                })
+            this._clearInputs();
+        }
+    }
+
+    getDB = () => { // Make a http get to db (need to test whit the teacher)
+        if (this._validate({ target: document.getElementById('dni') })) {
+            let data = this._getObject()
+            fetch('DEW/processDB.php?dni=' + data.dni)
+                .then((e) => {
+                    return e.json();
+                })
+                .then((data) => {
+                    this._setInputs(data);
+                    this._checkAllInputs();
+                })
+                .catch((e) => {
+                    console.log(e)
+                })
+        }
     }
 
 }
