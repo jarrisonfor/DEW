@@ -1,0 +1,56 @@
+body {
+    background-color: lightslategrey;
+}
+
+#seats, #films {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+#films {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #191919;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#seats img {
+    -webkit-filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8);
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8);
+}
+
+a>img {
+    width: 70%;
+}
+
+#seats>img {
+    width: 50%;
+    margin-top: 10px;
+}
+
+#seats>.booked {
+    -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}
+
+#info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#info>img {
+    width: 9vw;
+}
