@@ -99,7 +99,7 @@ class FileSystem {
     }
 
     _toggle = (toggler) => { // Closes or opens the folder to which it was clicked
-        toggler.parent().find("ul").toggleClass("hide");
+        toggler.parent().find("ul").toggle("fold");
         toggler.find('i').toggleClass('fa-folder');
         toggler.find('i').toggleClass('fa-folder-open');
     }
