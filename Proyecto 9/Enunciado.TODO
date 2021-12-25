@@ -1,21 +1,21 @@
 Actividad:
-    ☐ Modify YOUR finished scripts using JQUERY selectors, events,effects and animations, DOM manipulation and AJAX with JQuery where possible.
+    ✔ Modify YOUR finished scripts using JQUERY selectors, events,effects and animations, DOM manipulation and AJAX with JQuery where possible.
     ✔ Modify your script of activity three (cinema with the DOM).
     ✔ Modify your script of activity four (puzzle).
-    ☐ Modify your script of activity five (directory tree).
-    ☐ Modify your script of activity six (keyboard).
-    ☐ Modify your script of activity eight(form with AJAX).
-    ☐ Improve your original program if it was not working fully and add effects where possible.
-    ☐ Compress all the folders in a single ZIP file with your name
+    ✔ Modify your script of activity five (directory tree).
+    ✔ Modify your script of activity six (keyboard).
+    ✔ Modify your script of activity eight(form with AJAX).
+    ✔ Improve your original program if it was not working fully and add effects where possible.
+    ✔ Compress all the folders in a single ZIP file with your name
 
 Assesment:
-    ☐ Code is indented, commented and all in English.
-    ☐ The new version is fully functional.
-    ☐ All possible javascript code lines are translated into Jquery.
-    ☐ Add animations and effects with Jquery where possible.
-    ☐ Errors of the old version are fixed in the new version.
-    ☐ New version is optimized (no repeated lines, modular functions...)
-    ☐ New version is robust (no unexpected or default behaviours, clear messages... )
-    ☐ Correct handling of events (event propagation,callback functions are correctly used...)
-    ☐ Connections to Server are correctly handled.
-    ☐ Addition of extra features.
+    ✔ Code is indented, commented and all in English.
+    ✔ The new version is fully functional.
+    ✔ All possible javascript code lines are translated into Jquery.
+    ✔ Add animations and effects with Jquery where possible.
+    ✘ Errors of the old version are fixed in the new version.
+    ✔ New version is optimized (no repeated lines, modular functions...)
+    ✘ New version is robust (no unexpected or default behaviours, clear messages... )
+    ✔ Correct handling of events (event propagation,callback functions are correctly used...)
+    ✔ Connections to Server are correctly handled.
+    ✔ Addition of extra features.
