@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer .btn {
+    padding: 0;
+}
+
+footer {
+    margin-top: 500px;
+}
+
+/* carousel */
+
+.carousel {
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+}
+
+.carousel ul {
+    position: relative;
+    list-style: none;
+    list-style-type: none;
+    height: 250px;
+}
+
+.carousel ul li {
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    float: left;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.carousel i.btnPrevious {
+    position: absolute;
+    cursor: pointer;
+    top: 105px;
+    left: 10px;
+    z-index: 2;
+    font-size: 2em;
+}
+
+.carousel i.btnNext {
+    position: absolute;
+    cursor: pointer;
+    top: 105px;
+    right: 10px;
+    z-index: 2;
+    font-size: 2em;
+}
+
+
+.cart-container .cart-body {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 0 20px;
+    margin: 20px 0 30px;
+}
