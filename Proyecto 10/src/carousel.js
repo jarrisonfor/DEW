@@ -1,24 +1,4 @@
 class Carousel {
-    constructor() {
-        this.carouselItems = [
-            'img/test.png',
-            'img/test.png',
-            'img/test.png',
-            'img/test.png',
-            'img/test.png',
-            'img/test.png',
-        ];
-        this.carousel = $('.carousel ul');
-        this.carouselItems.forEach(src => {
-            let li = $('<li></li>');
-            li.css('background-image', `url(${src})`);
-            this.carousel.append(li);
-        });
-        this.carouselChild = this.carousel.find('li');
-        this.carouselClickCount = 0;
-        this.carouselItemWidth = this.carousel.find('li:first').width() + 4;
-        this.setIntervalProperty();
-    }
 
     nextCarouselImage = (speed) => {
         this.carouselClickCount++;
@@ -49,16 +29,32 @@ class Carousel {
     }
 
     init = () => {
-        this.carouselChild.each((i, e) => {
-            $(e).css('left', this.carouselItemWidth * this.carouselChild.index($(e)));
-        });
-        $('.btnPrevious').click(() => {
-            this.setIntervalProperty();
-            this.previousCarouselImage();
-        });
-        $('.btnNext').click(() => {
-            this.setIntervalProperty();
-            this.nextCarouselImage();
+        $.ajax({
+            method: 'GET',
+            url: 'server/productos.php',
+            success: (data) => {
+                this.carousel = $('.carousel ul');
+                data.forEach(product => {
+                    let li = $('<li></li>');
+                    li.css('background-image', `url(${product.picture})`);
+                    this.carousel.append(li);
+                });
+                this.carouselChild = this.carousel.find('li');
+                this.carouselClickCount = 0;
+                this.carouselItemWidth = this.carousel.find('li:first').width() + 4;
+                this.setIntervalProperty();
+                this.carouselChild.each((i, e) => {
+                    $(e).css('left', this.carouselItemWidth * this.carouselChild.index($(e)));
+                });
+                $('.btnPrevious').click(() => {
+                    this.setIntervalProperty();
+                    this.previousCarouselImage();
+                });
+                $('.btnNext').click(() => {
+                    this.setIntervalProperty();
+                    this.nextCarouselImage();
+                });
+            }
         });
     }
 

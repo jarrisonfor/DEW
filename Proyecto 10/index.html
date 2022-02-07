@@ -33,13 +33,13 @@
                 </ul>
             </div>
             <main class="p-5 mb-4">
-                <home v-if="page === 0"></home>
-                <product-list v-else-if="page === 1"></product-list>
+                <product-list v-if="page === 1"></product-list>
                 <contact v-else-if="page === 2"></contact>
                 <about v-else-if="page === 3"></about>
-                <sign v-else-if="page === 4"></sign>
-                <cart v-else-if="page === 5"></cart>
-                <product v-else-if="page === 6"></product>
+                <login :page-changer="changePage" v-else-if="page === 4"></login>
+                <register :page-changer="changePage" v-else-if="page === 5"></register>
+                <cart v-else-if="page === 6"></cart>
+                <product v-else-if="page === 7"></product>
             </main>
         </div>
         <footer-info :page-changer="changePage"></footer-info>

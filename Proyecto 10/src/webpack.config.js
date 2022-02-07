@@ -5,11 +5,11 @@ module.exports = {
         'app.js': [
             path.resolve(__dirname, 'about.js'),
             path.resolve(__dirname, 'contact.js'),
-            path.resolve(__dirname, 'home.js'),
             path.resolve(__dirname, 'menu-nav.js'),
             path.resolve(__dirname, 'product-list.js'),
             path.resolve(__dirname, 'product.js'),
-            path.resolve(__dirname, 'sign.js'),
+            path.resolve(__dirname, 'register.js'),
+            path.resolve(__dirname, 'login.js'),
             path.resolve(__dirname, 'footer-info.js'),
             path.resolve(__dirname, 'vue.js'),
             path.resolve(__dirname, 'cart.js'),

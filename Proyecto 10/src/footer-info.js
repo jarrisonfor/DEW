@@ -1,6 +1,6 @@
 Vue.component('footer-info', {
     template: `
-    <footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
+    <footer class="text-center text-lg-start bg-light text-muted pt-2">
         <section>
             <div class="container text-center text-md-start mt-2">
                 <div class="row mt-3">
@@ -18,9 +18,6 @@ Vue.component('footer-info', {
                             Products
                         </h6>
                         <div>
-                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(0)}">Home</button>
-                        </div>
-                        <div>
                             <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(1)}">Products</button>
                         </div>
                         <div>
@@ -35,7 +32,7 @@ Vue.component('footer-info', {
                             Contact
                         </h6>
                         <div><i class="fas fa-home me-3"></i> New York, NY 10012, US</div>
-                        <div>
+                        <div class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(2)}">
                             <i class="fas fa-envelope me-3"></i>
                             info@example.com
                         </div>

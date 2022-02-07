@@ -1,6 +1,7 @@
 Vue.component('cart', {
     template: `
     <div class="cart">
+        <h3 class="h3">Register</h3>
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-8">
                 <div class="cart-container">
@@ -92,8 +93,8 @@ Vue.component('cart', {
                         </div>
                     </div>
                     <div class="cart-footer text-right">
-                        <a href="page-checkout.html" class="btn btn-success my-1">Proceed to Checkout<i
-                                class="ri-arrow-right-line ml-2"></i></a>
+                        <button class="btn btn-success my-1">Proceed to Checkout<i
+                                class="ri-arrow-right-line ml-2"></i></button>
                     </div>
                 </div>
             </div>
