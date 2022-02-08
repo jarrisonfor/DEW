@@ -15,7 +15,7 @@ Vue.component('footer-info', {
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2">
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Products
+                            Links
                         </h6>
                         <div>
                             <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(1)}">Products</button>

@@ -21,7 +21,7 @@ Vue.component('contact', {
         </div>
     </div>
     `,
-    data: function() {
+    data: function () {
         return {
             name: '',
             email: '',
@@ -42,17 +42,17 @@ Vue.component('contact', {
                         message: this.message
                     },
                     success: (data) => {
-                        alert('Thank you for your message');
+                        toastr["success"]("Message sent successfully");
                         this.name = '';
                         this.email = '';
                         this.message = '';
                     },
                     error: (data) => {
-                        alert('Error in server');
+                        toastr["error"]("Message not sent");
                     }
                 });
             } else {
-                alert('Please fill all the fields');
+                toastr["info"]("Please fill all the fields");
             }
         }
     }
