@@ -1,6 +1,6 @@
 $.ajax({
     method: 'GET',
-    url: 'http://localhost/server/products.php',
+    url: '/server/products.php',
     success: (data) => {
         let productList = $('#product-list');
         productList.empty();
@@ -30,7 +30,7 @@ $('#category').on('change', function () {
     let category = $(this).val();
     $.ajax({
         method: 'GET',
-        url: 'http://localhost/server/products.php',
+        url: '/server/products.php',
         data: {
             category: category
         },

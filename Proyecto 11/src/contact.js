@@ -33,7 +33,7 @@ Vue.component('contact', {
             e.preventDefault();
             if (this.name && this.email && this.message) {
                 $.ajax({
-                    url: "server/contact.php",
+                    url: "/server/contact.php",
                     type: "POST",
                     dataType: 'json',
                     data: {

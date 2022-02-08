@@ -30,7 +30,7 @@ class Carousel {
     init = () => {
         $.ajax({
             method: 'GET',
-            url: 'http://localhost/server/products.php',
+            url: '/server/products.php',
             success: (data) => {
                 this.carousel = $('.carousel ul');
                 data.forEach(product => {

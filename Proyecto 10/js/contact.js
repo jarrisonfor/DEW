@@ -5,7 +5,7 @@ function checkForm(e) {
     let message = $('#message');
     if (name && email && message) {
         $.ajax({
-            url: "http://localhost/server/contact.php",
+            url: "/server/contact.php",
             type: "POST",
             dataType: 'json',
             data: {

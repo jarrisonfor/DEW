@@ -35,7 +35,7 @@ Vue.component('product-list', {
         category: function (val) {
             $.ajax({
                 method: 'GET',
-                url: 'server/products.php?category=' + val,
+                url: '/server/products.php?category=' + val,
                 success: (data) => {
                     this.productList = data;
                 }
@@ -45,7 +45,7 @@ Vue.component('product-list', {
     mounted: function () {
         $.ajax({
             method: 'GET',
-            url: 'server/products.php',
+            url: '/server/products.php',
             success: (data) => {
                 this.productList = data;
             }

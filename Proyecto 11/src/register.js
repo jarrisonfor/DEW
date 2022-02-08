@@ -66,7 +66,7 @@ Vue.component('register', {
             if (this.name.match(/^[a-zA-Z0-9]{3,20}$/) && this.email.match(/^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{3,20}.[a-zA-Z0-9]{3,20}$/) && this.password.match(/^[a-zA-Z0-9]{3,20}$/) && this.repeatPassword.match(/^[a-zA-Z0-9]{3,20}$/)) {
                 if (this.password === this.repeatPassword) {
                     $.ajax({
-                        url: "server/users.php",
+                        url: "/server/users.php",
                         type: "POST",
                         dataType: 'json',
                         data: {
