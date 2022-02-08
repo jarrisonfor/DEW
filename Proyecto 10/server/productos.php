@@ -4,9 +4,15 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $myPDO = new PDO('sqlite:database.sqlite');
-$productsSql = $myPDO->query("SELECT * FROM products");
-$products = [];
-while ($product = $productsSql->fetch(PDO::FETCH_ASSOC)) {
-    $products[] = $product;
+$category = !empty($_GET['category']) ? $_GET['category'] : $_POST['category'];
+if ($category) {
+    $stmt = $myPDO->prepare("SELECT * FROM products WHERE category = ?");
+    $stmt->execute([$category]);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($result);
+} else {
+    $stmt = $myPDO->prepare("SELECT * FROM products");
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($result);
 }
-echo json_encode($products);

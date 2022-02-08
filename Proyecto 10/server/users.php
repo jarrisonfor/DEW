@@ -16,9 +16,13 @@ if(!empty($_POST)){
     }
     $fields = rtrim($fields, ',');
     $values = rtrim($values, ',');
+    /* si el email no existe, crear usuario, si no, soltar error */
     if ($user['email'] !== $email) {
         $myPDO->query("INSERT INTO users ($fields) VALUES ($values);");
         $user = $userSql->fetch(PDO::FETCH_ASSOC);
+    } else{
+        echo json_encode(['status' => 'error', 'message' => 'El email ya existe']);
+        exit;
     }
 }
 echo json_encode($user);

@@ -3,6 +3,11 @@ Vue.component('product-list', {
     <div>
         <h3 class="h3">Product List </h3>
         <div class="row">
+            <select v-model="category" class="form-select mb-4 mt-4">
+                <option value="" selected>Select a category</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="laundry">Laundry Room</option>
+            </select>
             <div class="col-md-3 col-sm-6 product" v-for="(product, index) in productList" >
                 <div class="product-grid">
                     <div class="product-image">
@@ -20,12 +25,24 @@ Vue.component('product-list', {
         </div>
     </div>
     `,
-    data: function() {
+    data: function () {
         return {
             productList: [],
+            category: '',
         }
     },
-    mounted: function() {
+    watch: {
+        category: function (val) {
+            $.ajax({
+                method: 'GET',
+                url: 'server/productos.php?category=' + val,
+                success: (data) => {
+                    this.productList = data;
+                }
+            });
+        }
+    },
+    mounted: function () {
         $.ajax({
             method: 'GET',
             url: 'server/productos.php',
