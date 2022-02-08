@@ -1,36 +1,11 @@
-Create an online shop web for the store you have been assigned:
-    ✔ STRUCTURE IN HTML, It has to have at least four divisions, with the following functions:(0,5 pt.)
-        ✔ Menu division on top horizontally.
-        ✔ Division for recommended products or promotions : They must be continuously sliding.
-        ✔ Main division for detailed information display.
-        ✔ Other information division.
-    ☐ MENU with a LOGO has to offer the following options:
-        ✔ Home: A link that reloads the initial web.(0,25pt)
-        ✘ Products: Shows in the Main Division a list of products categories (at least two), that when selected shows the corresponding items (0,25pt)
-        ✔ About: Shows information in the Main Division about the Company.(0,25pt)
-        ☐ Sign in: Lets us sign in to the web or in case we are no member it displays a form for registering .(0,25pt)
-        ☐ Cart: Shows the content of our shopping cart in the Main division and confirms or cancel the order.
-        ✘ Language: Lets you switch the languages (at least Spanish and English).(1pt.)
-    ☐ SLIDING PRODUCTS:(1pt.)
-        ✔ At least ten products are sliding automatically every couple of  seconds.
-        ☐ When we click on one product the information is shown in the main division.
-        ✔ The information must come from a data base in a server (picture, name, price, availability...).
-        ☐ We can add the product to the cart from there.
-    ☐ MAIN DIVISION:(0,5pt)
-        ✔ Shows individual information of recommended products.
-        ☐ Shows contents of shopping cart with their prices and amounts with the TOTAL price.
-        ✔ Shows list of other products.
-        ✔ Shows contact form.
-    ☐ FINAL DIVISION(0,5pt.)
-        ✔ Shows opinions, Copyright and Contact information.
-        ✔ When clicking on e-mail a box opens in the MAIN DIVISION for sending an e-mail to the store.
-    ☐ USE regular expressions at least for the user sign in form.(Same one as we did in an exercise earlier)(0.5 pt.)
-    ✔ USE AJAX for retrieving information form the server. It must include at least a DATA BASE with four TABLES.(2pt.)
-        ✔ The server can be any of your own and must include:
-        ✔ First table for the products (minimum ten of them with name, price, availability and picture
-        ✔ Second Table for user with the date from the sign up form
-        ✔ Third table for orders made by the customers with information from each order form.
-        ✔ Fourth table with messages came from the user with information from the Contact form.
-    ✔ USE JQUERY combined with CSS for the SLIDER (1pt).
-    ✔ USE VUE JS for controlling at least one of the divisions with: Data binding , methods, directives...(1pt.)
-    ☐ USE COOKIES for storing the user information.(1 pt.)
+Modify the online shop web so that it includes at least one Vue (could be more) instance that uses:
+    ✔ Root component  with data.
+    ✔ Data binding directives.
+    ✔ Event directives with methods.
+    ✔ Two-way data binding.
+    ☐ Computed properties.
+    ✔ Dynamic CSS.
+    ✔ Loop and conditional directives.
+    ✔ Templates.
+    ✔ New components.
+    ☐ Any extra feature you may add.
