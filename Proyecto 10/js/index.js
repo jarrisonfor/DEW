@@ -16,7 +16,6 @@ $.ajax({
                                 <div class="price">
                                     ${product.price}€
                                 </div>
-                                <span class="add-to-cart">ADD TO CART</span>
                             </div>
                         </div>
                     </div>
@@ -49,7 +48,6 @@ $('#category').on('change', function () {
                                 <div class="price">
                                     ${product.price}€
                                 </div>
-                                <span class="add-to-cart">ADD TO CART</span>
                             </div>
                         </div>
                     </div>
