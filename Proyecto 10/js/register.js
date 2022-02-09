@@ -1,4 +1,5 @@
-function checkForm() {
+function checkForm(e) {
+    e.preventDefault();
     let name = $('#name');
     let email = $('#email');
     let password = $('#password');
@@ -64,4 +65,4 @@ function checkForm() {
 
 }
 
-$('#formButton').click(checkForm);
+$('form').click(checkForm);

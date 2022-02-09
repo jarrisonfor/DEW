@@ -1,4 +1,5 @@
-function checkForm() {
+function checkForm(e) {
+    e.preventDefault();
     let email = $('#email');
     let password = $('#password');
     $.ajax({
@@ -14,6 +15,7 @@ function checkForm() {
                 alert(data.message);
             } else {
                 setCookie('user_id', data.user_id, 1);
+                document.location.href = "/";
             }
         },
         error: (data) => {
@@ -22,4 +24,4 @@ function checkForm() {
     });
 }
 
-$('#formButton').click(checkForm);
+$('form').submit(checkForm);
