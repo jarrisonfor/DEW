@@ -1,3 +1,7 @@
+if (getCookie('user_id').length == 0) {
+    document.location.href = "/html/login.html";
+}
+
 function checkForm(e) {
     e.preventDefault();
     let name = $('#name');

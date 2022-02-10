@@ -1,3 +1,7 @@
+if (getCookie('user_id').length > 0) {
+    document.location.href = "/";
+}
+
 function checkForm(e) {
     e.preventDefault();
     let name = $('#name');
@@ -52,17 +56,46 @@ function checkForm(e) {
         },
         success: (data) => {
             if (data.status == 'error') {
-                toastr["error"](data.message);
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'error',
+                    title: data.message
+                })
             } else {
-                setCookie('user_id', data.user_id, 1);
+                console.log(data);
+                setCookie('user_id', data.id, 1);
                 document.location.href = "/";
             }
         },
         error: (data) => {
-            toastr["error"]("Server error");
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'error',
+                title: 'Server error'
+            })
         }
     });
 
 }
 
-$('form').click(checkForm);
+$('form').submit(checkForm);

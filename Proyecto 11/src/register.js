@@ -79,7 +79,7 @@ Vue.component('register', {
                             if (data.status == 'error') {
                                 alert(data.message);
                             } else {
-                                this.setCookie('user_id', data.user_id, 1);
+                                this.setCookie('user_id', data.id, 1);
                                 this.pageChanger(1);
                             }
                         },

@@ -1,7 +1,7 @@
 Vue.component('cart', {
     template: `
     <div class="cart">
-        <h3 class="h3">Register</h3>
+        <h3 class="h3">Cart</h3>
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-8">
                 <div class="cart-container">
