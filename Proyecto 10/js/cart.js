@@ -6,8 +6,52 @@ var json_str = getCookie('cart');
 var cart = {};
 if (json_str.length > 0) {
     cart = JSON.parse(json_str);
+    $('.order').click(function () {
+        let order = {};
+        order.user_id = getCookie('user_id');
+        order.products = [];
+        Object.keys(cart).forEach(function (key) {
+            order.products.push({
+                product_id: key,
+                quantity: cart[key].quantity
+            });
+        });
+        $.ajax({
+            url: '/server/orders.php',
+            type: 'POST',
+            data: order,
+            success: (data) => {
+                setCookie('cart', '', -1);
+                $('.cart-list').html('<tr></tr>');
+                $('.totalAmount').text('0€');
+                $(this).attr('disabled', true).click(() => { return; });
+            },
+            error: (error) => {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showCloseButton: true,
+                })
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Server error'
+                })
+            }
+        });
+    });
+} else {
+    $('.bi.bi-trash-fill').click(function () {
+        let id = $(this).parent().parent().parent().attr('data-id');
+        delete cart[id];
+        setCookie('cart', JSON.stringify(cart));
+        location.reload();
+    });
+
+    $('.order').attr('disabled', true);
 }
-console.log(cart);
 
 let totalAmount = 0;
 Object.keys(cart).forEach(function (key) {
@@ -29,57 +73,3 @@ Object.keys(cart).forEach(function (key) {
 
 $('.totalAmount').text(totalAmount + '€');
 
-function checkForm(e) {
-    e.preventDefault();
-    let name = $('#name');
-    let email = $('#email');
-    let message = $('#message');
-    if (name && email && message) {
-        $.ajax({
-            url: "/server/orders.php",
-            type: "POST",
-            dataType: 'json',
-            data: {
-                name: name.val(),
-                email: email.val(),
-                message: message.val()
-            },
-            success: (data) => {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Ordered!'
-                })
-                getCookie('cart', '', -1);
-            },
-            error: (data) => {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'error',
-                    title: 'Server error'
-                })
-            }
-        });
-    }
-}
-$('form').submit(checkForm);
