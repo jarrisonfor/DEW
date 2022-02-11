@@ -6,6 +6,10 @@ class Carousel {
         }, speed, () => {
             let lastItem = this.carousel.find('li:first');
             lastItem.remove().appendTo(this.carousel);
+            lastItem.on('click', function() {
+                setCookie('product_id', $(this).data('id'), 1);
+                document.location.href = '/html/product.html';
+            });
             lastItem.css('left', ((this.carouselChild.length - 1) * (this.carouselItemWidth)) + (this.carouselClickCount * this.carouselItemWidth));
         });
     }
@@ -21,6 +25,10 @@ class Carousel {
         this.carouselClickCount--;
         let lastItem = this.carousel.find('li:last');
         lastItem.remove().prependTo(this.carousel);
+        lastItem.on('click', function() {
+            setCookie('product_id', $(this).data('id'), 1);
+            document.location.href = '/html/product.html';
+        });
         lastItem.css('left', this.carouselItemWidth * this.carouselClickCount);
         this.carousel.finish().animate({
             left: '+=' + this.carouselItemWidth
@@ -34,8 +42,12 @@ class Carousel {
             success: (data) => {
                 this.carousel = $('.carousel ul');
                 data.forEach(product => {
-                    let li = $('<li></li>');
+                    let li = $(`<li data-id="${product.id}"></li>`);
                     li.css('background-image', `url(${product.picture})`);
+                    li.on('click', () => {
+                        setCookie('product_id', product.id, 1);
+                        document.location.href = '/html/product.html';
+                    });
                     this.carousel.append(li);
                 });
                 this.carouselChild = this.carousel.find('li');

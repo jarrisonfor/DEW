@@ -20,3 +20,19 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function closeSession() {
+    setCookie('user_id', '', -1);
+    document.location.href = "/";
+}
+
+let loginButton = $('#loginButton');
+if (getCookie('user_id').length > 0) {
+    loginButton.attr('href', '#');
+    loginButton.empty();
+    loginButton.append('<i class="fas fa-sign-out-alt"></i>');
+    loginButton.attr('title', 'Close session');
+    loginButton.on('click', closeSession);
+} else {
+    loginButton.attr('href', '/html/login.html');
+}

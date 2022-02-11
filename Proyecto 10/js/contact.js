@@ -7,28 +7,52 @@ function checkForm(e) {
     let name = $('#name');
     let email = $('#email');
     let message = $('#message');
-    if (name && email && message) {
-        $.ajax({
-            url: "/server/contact.php",
-            type: "POST",
-            dataType: 'json',
-            data: {
-                name: name.val(),
-                email: email.val(),
-                message: message.val()
-            },
-            success: (data) => {
-                toastr["success"]("Message sent successfully");
-                name.val('');
-                email.val('');
-                message.val('');
-            },
-            error: (data) => {
-                toastr["error"]("Message not sent");
-            }
-        });
-    } else {
-        toastr["info"]("Please fill all the fields");
-    }
+    $.ajax({
+        url: "/server/contact.php",
+        type: "POST",
+        dataType: 'json',
+        data: {
+            name: name.val(),
+            email: email.val(),
+            message: message.val()
+        },
+        success: (data) => {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'success',
+                title: 'Email has been sent!'
+            })
+            name.val('');
+            email.val('');
+            message.val('');
+        },
+        error: (data) => {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'error',
+                title: 'Server error'
+            })
+        }
+    });
 }
 $('form').submit(checkForm);
