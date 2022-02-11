@@ -1,4 +1,4 @@
-Vue.component('product-list', {
+Vue.component('index', {
     template: `
     <div>
         <h3 class="h3">Product List </h3>
