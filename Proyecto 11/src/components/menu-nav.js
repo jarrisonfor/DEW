@@ -2,7 +2,7 @@ Vue.component('menu-nav', {
     template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <button class="btn navbar-brand shadow-none" v-on:click="() => {this.pageChanger(1)}">{{name}}</button>
+            <button class="btn navbar-brand shadow-none" v-on:click="() => {this.pageChanger(1)}"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Illuminati_triangle_eye.png" > illuminati Merlin</img></button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
