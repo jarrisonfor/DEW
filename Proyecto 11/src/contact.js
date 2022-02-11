@@ -47,7 +47,7 @@ Vue.component('contact', {
                         this.email = '';
                         this.message = '';
                     },
-                    error: (data) => {
+                    error: () => {
                         toastr["error"]("Message not sent");
                     }
                 });

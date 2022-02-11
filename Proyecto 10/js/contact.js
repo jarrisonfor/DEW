@@ -1,52 +1,42 @@
-if (getCookie('user_id').length == 0) {
+if (session.getCookie('user_id').length == 0) {
     document.location.href = "/html/login.html";
 }
 
-function checkForm(e) {
-    e.preventDefault();
-    let name = $('#name');
-    let email = $('#email');
-    let message = $('#message');
-    $.ajax({
-        url: "/server/contact.php",
-        type: "POST",
-        dataType: 'json',
-        data: {
-            name: name.val(),
-            email: email.val(),
-            message: message.val()
-        },
-        success: (data) => {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                showCloseButton: true,
-            })
-            Toast.fire({
-                icon: 'success',
-                title: 'Email has been sent!'
-            })
-            name.val('');
-            email.val('');
-            message.val('');
-        },
-        error: (data) => {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                showCloseButton: true,
-            })
-            Toast.fire({
-                icon: 'error',
-                title: 'Server error'
-            })
-        }
-    });
+class Contact {
+    init = () => { // Function to initialize the carousel
+        $('form').submit(function (e) {
+            e.preventDefault();
+            let name = $('#name');
+            let email = $('#email');
+            let message = $('#message');
+            $.ajax({
+                url: "/server/contact.php",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    name: name.val(),
+                    email: email.val(),
+                    message: message.val()
+                },
+                success: () => {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Email has been sent!'
+                    })
+                    name.val('');
+                    email.val('');
+                    message.val('');
+                },
+                error: () => {
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Server error'
+                    })
+                }
+            });
+        });
+    }
 }
-$('form').submit(checkForm);
+
+let contact = new Contact();
+contact.init();
