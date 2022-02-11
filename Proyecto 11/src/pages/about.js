@@ -15,7 +15,7 @@ Vue.component('about', {
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ducimus voluptatibus nisi sit fugiat voluptatem? Quae necessitatibus sint minus. Aliquid non optio obcaecati iusto vel suscipit eligendi quae quo fugit!.
                         </p>
                         <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ducimus voluptatibus nisi sit fugiat voluptatem? Quae necessitatibus sint minus. Aliquid non optio obcaecati iusto vel suscipit eligendi quae quo fugit!.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ducimus voluptatibus nisi sit fugiat voluptatem? Quae necessitatibus sint minus. Aliquid non optio obcaecati iusto vel suscipit eligendi quae quo fugit!.
                         </p>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ Vue.component('about', {
                 <div class="site-heading text-center">
                     <h3>Our team</h3>
                     <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br /> Vel ducimus voluptatibus nisi sit!.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br /> Vel ducimus voluptatibus nisi sit!.
                     </p>
                     <div class="border"></div>
                 </div>
@@ -39,7 +39,7 @@ Vue.component('about', {
                         <h3>Yeray Gonzalez Mancebo</h3>
                         <div class="border-team"></div>
                         <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ducimus voluptatibus nisi sit fugiat voluptatem? Quae necessitatibus sint minus. Aliquid non optio obcaecati iusto vel suscipit eligendi quae quo fugit!.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ducimus voluptatibus nisi sit fugiat voluptatem? Quae necessitatibus sint minus. Aliquid non optio obcaecati iusto vel suscipit eligendi quae quo fugit!.
                         </p>
                         <div class="social-icons">
                             <a href="https://es-es.facebook.com/"><i id="social-fb"
