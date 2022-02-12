@@ -1,4 +1,4 @@
-if (session.getCookie('user_id').length > 0) {
+if (this.getCookie('user_id').length > 0) {
     document.location.href = "/";
 }
 
@@ -66,7 +66,7 @@ class Register {
                         })
                     } else {
                         console.log(data);
-                        session.setCookie('user_id', data.id, 1);
+                        this.setCookie('user_id', data.id, 1);
                         document.location.href = "/";
                     }
                 },

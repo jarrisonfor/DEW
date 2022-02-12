@@ -1,5 +1,5 @@
-if (session.getCookie('user_id').length > 0) {
-    document.location.href = "/";
+if (this.getCookie('user_id').length > 0) {
+    this.pageChanger(1);
 }
 
 class Login {
@@ -23,8 +23,8 @@ class Login {
                             title: data.message
                         })
                     } else {
-                        session.setCookie('user_id', data.id, 1);
-                        document.location.href = "/";
+                        this.setCookie('user_id', data.id, 1);
+                        this.pageChanger(1);
                     }
                 },
                 error: () => {

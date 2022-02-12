@@ -21,6 +21,7 @@ Vue.component('contact', {
         </div>
     </div>
     `,
+    props: ['pageChanger', 'getCookie'],
     data: function () {
         return {
             name: '',
@@ -28,32 +29,39 @@ Vue.component('contact', {
             message: '',
         }
     },
+    mounted: function () {
+        if (this.getCookie('user_id').length == 0) {
+            this.pageChanger(4);
+        }
+    },
     methods: {
         checkForm: function (e) {
             e.preventDefault();
-            if (this.name && this.email && this.message) {
-                $.ajax({
-                    url: "/server/contact.php",
-                    type: "POST",
-                    dataType: 'json',
-                    data: {
-                        name: this.name,
-                        email: this.email,
-                        message: this.message
-                    },
-                    success: (data) => {
-                        toastr["success"]("Message sent successfully");
-                        this.name = '';
-                        this.email = '';
-                        this.message = '';
-                    },
-                    error: () => {
-                        toastr["error"]("Message not sent");
-                    }
-                });
-            } else {
-                toastr["info"]("Please fill all the fields");
-            }
+            $.ajax({
+                url: "/server/contact.php",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    name: this.name,
+                    email: this.email,
+                    message: this.message
+                },
+                success: () => {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Email has been sent!'
+                    });
+                    this.name = '';
+                    this.email = '';
+                    this.message = '';
+                },
+                error: () => {
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Server error'
+                    })
+                }
+            });
         }
     }
 })

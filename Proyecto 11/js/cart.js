@@ -1,16 +1,16 @@
-if (session.getCookie('user_id').length == 0) {
-    document.location.href = "/html/login.html";
+if (this.getCookie('user_id').length == 0) {
+    this.pageChanger(4);
 }
 
 class Cart {
     init = () => { // Function to initialize the carousel
-        var json_str = session.getCookie('cart');
+        var json_str = this.getCookie('cart');
         var cart = {};
         if (json_str.length > 0) {
             cart = JSON.parse(json_str);
             $('.order').click(function () {
                 let order = {};
-                order.user_id = session.getCookie('user_id');
+                order.user_id = this.getCookie('user_id');
                 order.products = [];
                 Object.keys(cart).forEach(function (key) {
                     order.products.push({
@@ -23,7 +23,7 @@ class Cart {
                     type: 'POST',
                     data: order,
                     success: (data) => {
-                        session.setCookie('cart', '', -1);
+                        this.setCookie('cart', '', -1);
                         $('.cart-list').html('<tr></tr>');
                         $('.totalAmount').text('0€');
                         $(this).attr('disabled', true).click(() => { return; });
@@ -67,7 +67,7 @@ class Cart {
         $('.bi.bi-trash-fill').click(function () {
             let id = $(this).parent().parent().parent().attr('data-id');
             delete cart[id];
-            session.setCookie('cart', JSON.stringify(cart));
+            this.setCookie('cart', JSON.stringify(cart));
             location.reload();
         });
         $('.totalAmount').text(totalAmount + '€');

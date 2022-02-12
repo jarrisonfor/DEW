@@ -19,8 +19,8 @@ class Index {
                 </div>
             `);
             productJquery.click(() => {
-                session.setCookie('product_id', product.id, 1);
-                document.location.href = '/html/product.html';
+                this.setCookie('product_id', product.id, 1);
+                this.pageChanger(7);
             });
             productList.append(productJquery);
         });

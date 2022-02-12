@@ -4,7 +4,6 @@ module.exports = {
     entry: {
         'app.js': [
             path.resolve(__dirname, 'sweetalert.js'),
-            path.resolve(__dirname, 'session.js'),
             path.resolve(__dirname, 'vue.js'),
             path.resolve(__dirname, 'components/menu-nav.js'),
             path.resolve(__dirname, 'pages/about.js'),

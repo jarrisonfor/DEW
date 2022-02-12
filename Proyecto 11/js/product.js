@@ -5,7 +5,7 @@ class Product {
             url: '/server/product.php',
             dataType: 'json',
             data: {
-                product_id: session.getCookie('product_id'),
+                product_id: this.getCookie('product_id'),
             },
             success: (data) => {
                 $('.card-title').text(data.name);
@@ -17,7 +17,7 @@ class Product {
                     $('.add-to-cart-button').attr('disabled', true).text('Out of stock');
                 } else {
                     $('.add-to-cart-button').on('click', () => {
-                        var json_str = session.getCookie('cart');
+                        var json_str = this.getCookie('cart');
                         if (json_str.length > 0) {
                             var cart = JSON.parse(json_str);
                             if (cart[data.id]) {
@@ -38,7 +38,7 @@ class Product {
                             };
                         }
                         var json_str = JSON.stringify(cart);
-                        session.setCookie('cart', json_str, 1);
+                        this.setCookie('cart', json_str, 1);
                         Toast.fire({
                             icon: 'success',
                             title: 'Added to cart'

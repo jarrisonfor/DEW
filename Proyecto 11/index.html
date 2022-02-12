@@ -36,11 +36,11 @@
             </div>
             <main class="p-5 mb-4">
                 <index v-if="page === 1"></index>
-                <contact v-else-if="page === 2"></contact>
+                <contact :page-changer="changePage" :getCookie="getCookie" v-else-if="page === 2"></contact>
                 <about v-else-if="page === 3"></about>
                 <login :page-changer="changePage" v-else-if="page === 4"></login>
                 <register :page-changer="changePage" v-else-if="page === 5"></register>
-                <cart v-else-if="page === 6"></cart>
+                <cart :page-changer="changePage" v-else-if="page === 6"></cart>
                 <product v-else-if="page === 7"></product>
             </main>
         </div>

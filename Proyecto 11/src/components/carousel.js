@@ -7,8 +7,8 @@ class Carousel {
             let lastItem = this.carousel.find('li:first');
             lastItem.remove().appendTo(this.carousel);
             lastItem.on('click', function() {
-                session.setCookie('product_id', $(this).data('id'), 1);
-                document.location.href = '/html/product.html';
+                app.setCookie('product_id', $(this).data('id'), 1);
+                app.pageChanger(7);
             });
             lastItem.css('left', ((this.carouselChild.length - 1) * (this.carouselItemWidth)) + (this.carouselClickCount * this.carouselItemWidth));
         });
@@ -26,8 +26,8 @@ class Carousel {
         let lastItem = this.carousel.find('li:last');
         lastItem.remove().prependTo(this.carousel);
         lastItem.on('click', function() {
-            session.setCookie('product_id', $(this).data('id'), 1);
-            document.location.href = '/html/product.html';
+            app.setCookie('product_id', $(this).data('id'), 1);
+            app.pageChanger(7);
         });
         lastItem.css('left', this.carouselItemWidth * this.carouselClickCount);
         this.carousel.finish().animate({
@@ -45,8 +45,8 @@ class Carousel {
                     let li = $(`<li data-id="${product.id}"></li>`);
                     li.css('background-image', `url(${product.picture})`);
                     li.on('click', () => {
-                        session.setCookie('product_id', product.id, 1);
-                        document.location.href = '/html/product.html';
+                        app.setCookie('product_id', product.id, 1);
+                        app.pageChanger(7);
                     });
                     this.carousel.append(li);
                 });
