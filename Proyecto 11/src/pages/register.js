@@ -4,24 +4,39 @@ Vue.component('register', {
         <h3 class="h3">Register</h3>
         <div class="loginbox bg-white pt-2">
             <i class="bi bi-person-fill"></i>
-            <div class="loginbox-textbox">
-                <input type="text" v-model="name" class="form-control" placeholder="Name">
-            </div>
-            <div class="loginbox-textbox">
-                <input type="text" v-model="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="loginbox-textbox">
-                <input type="password" v-model="password" class="form-control" placeholder="Password">
-            </div>
-            <div class="loginbox-textbox">
-                <input type="password" v-model="repeatPassword" class="form-control" placeholder="Repeat Password">
-            </div>
-            <div class="loginbox-submit">
-                <input type="button" class="btn btn-primary btn-block" v-on:click="checkForm" value="Register">
-            </div>
-            <div class="loginbox-register">
-                <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(4)}">Login</button>
-            </div>
+            <form>
+                <div class="loginbox-textbox">
+                    <input type="text" v-model="name" class="form-control" placeholder="Name">
+                    <div class="invalid-feedback">
+                        The name need has 3 letters or more.
+                    </div>
+                </div>
+                <div class="loginbox-textbox">
+                    <input type="email" v-model="email" class="form-control" placeholder="Email">
+                    <div class="invalid-feedback">
+                        The email need to be a valid email
+                    </div>
+                </div>
+                <div class="loginbox-textbox">
+                    <input type="password" v-model="password" class="form-control" placeholder="Password">
+                    <div class="invalid-feedback">
+                        Need contain at least 12 digits with letters, numbers and one symbol.
+                    </div>
+                </div>
+                <div class="loginbox-textbox">
+                    <input type="password" v-model="repeatPassword" class="form-control"
+                        placeholder="Repeat Password">
+                    <div class="invalid-feedback">
+                        Dont match the password field.
+                    </div>
+                </div>
+                <div class="loginbox-submit">
+                    <input type="button" class="btn btn-primary btn-block" v-on:click="checkForm" value="Register">
+                </div>
+                <div class="loginbox-register">
+                    <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(4)}">Login</button>
+                </div>
+            </form>
         </div>
     </div>
     `,
