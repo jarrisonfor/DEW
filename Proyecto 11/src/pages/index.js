@@ -8,7 +8,7 @@ Vue.component('index', {
             <option value="laundry">Laundry Room</option>
         </select>
         <div class="row" id="product-list">
-            <div class="col-md-3 col-sm-6 product" v-for="(product, index) in productList" >
+            <div class="col-md-3 col-sm-6 product" v-for="(product, index) in productList" v-on:click="() => {this.selectProduct(product.id)}">
                 <div class="product-grid">
                     <div class="product-image">
                         <img class="pic-1" v-bind:src="product.picture">
@@ -30,6 +30,12 @@ Vue.component('index', {
             category: '',
         }
     },
+    methods: {
+        selectProduct: function (product_id) {
+            this.setCookie('product_id', product_id, 1);
+            this.pageChanger(7);
+        }
+    },
     watch: {
         category: function (val) {
             $.ajax({
@@ -37,6 +43,12 @@ Vue.component('index', {
                 url: '/server/products.php?category=' + val,
                 success: (data) => {
                     this.productList = data;
+                },
+                error: () => {
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Server error'
+                    })
                 }
             });
         }
@@ -47,6 +59,12 @@ Vue.component('index', {
             url: '/server/products.php',
             success: (data) => {
                 this.productList = data;
+            },
+            error: () => {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Server error'
+                })
             }
         });
     }
