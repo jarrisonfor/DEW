@@ -1,4 +1,4 @@
-var app = new Vue({
+var vueClass = new Vue({
     el: '#app',
     data: {
         page: 1,
@@ -33,4 +33,4 @@ var app = new Vue({
             this.changePage(1);
         }
     },
-})
+});

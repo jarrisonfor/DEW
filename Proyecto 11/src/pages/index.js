@@ -8,7 +8,7 @@ Vue.component('index', {
             <option value="laundry">Laundry Room</option>
         </select>
         <div class="row" id="product-list">
-            <div class="col-md-3 col-sm-6 product" v-for="(product, index) in productList" v-on:click="() => {this.selectProduct(product.id)}">
+            <div class="col-md-3 col-sm-6 product" v-for="(product, index) in productList" v-on:click="() => {selectProduct(product.id)}">
                 <div class="product-grid">
                     <div class="product-image">
                         <img class="pic-1" v-bind:src="product.picture">
@@ -24,6 +24,7 @@ Vue.component('index', {
         </div>
     </div>
     `,
+    props: ['pageChanger', 'setCookie'],
     data: function () {
         return {
             productList: [],
