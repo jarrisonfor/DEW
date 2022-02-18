@@ -24,7 +24,7 @@ Vue.component('index', {
         </div>
     </div>
     `,
-    props: ['pageChanger', 'setCookie'],
+    props: ['changePage', 'setCookie'],
     data: function () {
         return {
             productList: [],
@@ -34,7 +34,7 @@ Vue.component('index', {
     methods: {
         selectProduct: function (product_id) {
             this.setCookie('product_id', product_id, 1);
-            this.pageChanger(7);
+            this.changePage(7);
         }
     },
     watch: {

@@ -2,10 +2,32 @@ var vueClass = new Vue({
     el: '#app',
     data: {
         page: 1,
+        forceUpdate: 0,
+        forceUpdateNav: 0,
+        isUserLogged: false,
+    },
+    watch: {
+        page: function () {
+            this.checkUserIsLogged();
+        },
+        isUserLogged: function () {
+            this.forceUpdateNav = Math.random();
+        }
+    },
+    mounted: function () {
+        this.checkUserIsLogged();
     },
     methods: {
+        checkUserIsLogged: function () {
+            if (this.getCookie('user_id').length > 0) {
+                this.isUserLogged = true;
+            } else {
+                this.isUserLogged = false;
+            }
+        },
         changePage: function (page) {
             this.page = page;
+            this.forceUpdate = Math.random();
         },
         setCookie: function (cname, cvalue, exdays) {
             const d = new Date();
@@ -28,9 +50,19 @@ var vueClass = new Vue({
             }
             return "";
         },
+        createSession: function (id) {
+            this.setCookie('user_id', id, 1);
+            this.isUserLogged = true;
+            Toast.fire({
+                icon: 'success',
+                title: 'User logged!'
+            })
+            this.changePage(1);
+        },
         closeSession: function () {
             this.setCookie('user_id', '', -1);
+            this.isUserLogged = false;
             this.changePage(1);
         }
-    },
+    }
 });

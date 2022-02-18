@@ -477,7 +477,6 @@ h3.h3 {
 
 .out-of-stock {
     background-image: url(http://www.mtcracingmxparts.co.nz/uploads/6/9/4/4/69442973/s369866088490753860_p318_i1_w640.png) !important;
-    display: none;
     z-index: 800;
     position: absolute;
     top: 0;

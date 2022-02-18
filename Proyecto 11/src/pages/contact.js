@@ -21,7 +21,7 @@ Vue.component('contact', {
         </div>
     </div>
     `,
-    props: ['pageChanger', 'getCookie'],
+    props: ['changePage', 'isUserLogged'],
     data: function () {
         return {
             name: '',
@@ -30,8 +30,12 @@ Vue.component('contact', {
         }
     },
     mounted: function () {
-        if (this.getCookie('user_id').length == 0) {
-            this.pageChanger(4);
+        if (!this.isUserLogged) {
+            Toast.fire({
+                icon: 'error',
+                title: 'You need to be logged in to send a message'
+            })
+            this.changePage(4);
         }
     },
     methods: {

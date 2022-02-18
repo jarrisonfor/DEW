@@ -28,7 +28,7 @@
 
 <body>
     <div id="app">
-        <menu-nav :page-changer="changePage" :page="page"></menu-nav>
+        <menu-nav :change-page="changePage" :is-user-logged="isUserLogged" :close-session="closeSession" :page="page" :key="forceUpdateNav"></menu-nav>
         <div class="container">
             <div class="carousel mt-3">
                 <i class="bi bi-arrow-left-circle-fill btnPrevious"></i>
@@ -37,16 +37,16 @@
                 </ul>
             </div>
             <main class="p-5 mb-4">
-                <index :page-changer="changePage" :set-cookie="setCookie" v-if="page === 1"></index>
-                <contact :page-changer="changePage" :get-cookie="getCookie" v-else-if="page === 2"></contact>
+                <index v-if="page === 1" :change-page="changePage" :set-cookie="setCookie"></index>
+                <contact v-else-if="page === 2" :change-page="changePage" :is-user-logged="isUserLogged"></contact>
                 <about v-else-if="page === 3"></about>
-                <login :page-changer="changePage" :get-cookie="getCookie" :set-cookie="setCookie" v-else-if="page === 4"></login>
-                <register :page-changer="changePage" :get-cookie="getCookie" :set-cookie="setCookie" v-else-if="page === 5"></register>
-                <cart :page-changer="changePage" v-else-if="page === 6"></cart>
-                <product v-else-if="page === 7"></product>
+                <login  v-else-if="page === 4" :change-page="changePage" :is-user-logged="isUserLogged" :create-session="createSession"></login>
+                <register v-else-if="page === 5" :change-page="changePage" :is-user-logged="isUserLogged" :create-session="createSession"></register>
+                <cart v-else-if="page === 6" :change-page="changePage" :set-cookie="setCookie" :get-cookie="getCookie" :is-user-logged="isUserLogged"></cart>
+                <product v-else-if="page === 7" :set-cookie="setCookie" :get-cookie="getCookie" :is-user-logged="isUserLogged" :key="forceUpdate"></product>
             </main>
         </div>
-        <footer-info :page-changer="changePage"></footer-info>
+        <footer-info :change-page="changePage"></footer-info>
     </div>
 </body>
 

@@ -18,13 +18,13 @@ Vue.component('footer-info', {
                             Links
                         </h6>
                         <div>
-                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(1)}">Products</button>
+                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.changePage(1)}">Products</button>
                         </div>
                         <div>
-                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(2)}">Contact</button>
+                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.changePage(2)}">Contact</button>
                         </div>
                         <div>
-                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(3)}">About</button>
+                            <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.changePage(3)}">About</button>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -32,7 +32,7 @@ Vue.component('footer-info', {
                             Contact
                         </h6>
                         <div><i class="fas fa-home me-3"></i> New York, NY 10012, US</div>
-                        <div class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(2)}">
+                        <div class="btn btn-link text-reset shadow-none" v-on:click="() => {this.changePage(2)}">
                             <i class="fas fa-envelope me-3"></i>
                             info@example.com
                         </div>
@@ -52,7 +52,7 @@ Vue.component('footer-info', {
             randomOpinion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam.'
         }
     },
-    props: ['pageChanger'],
+    props: ['changePage'],
     mounted: function () {
     },
 })

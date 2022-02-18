@@ -1,6 +1,43 @@
 {
     "database.connections": {
         "1644179465178": {
+            "key": "1644179465178",
+            "host": "127.0.0.1",
+            "port": "3306",
+            "user": "root",
+            "password": "",
+            "timezone": "+00:00",
+            "useSSL": false,
+            "isCluster": false,
+            "clientCertPath": null,
+            "clientKeyPath": null,
+            "ssh": {
+                "host": "",
+                "privateKeyPath": "/home/yeray/.ssh/id_rsa",
+                "port": 22,
+                "username": "root",
+                "type": "privateKey",
+                "connectTimeout": 10000,
+                "algorithms": {
+                    "cipher": []
+                },
+                "tunnelPort": null
+            },
+            "usingSSH": false,
+            "esAuth": "none",
+            "encoding": "utf8",
+            "showHidden": false,
+            "connectionKey": "database.connections",
+            "global": false,
+            "dbType": "SQLite",
+            "connectionUrl": "",
+            "encrypt": true,
+            "dbPath": "/home/yeray/Proyectos/DEW/Proyecto 11/server/database.sqlite",
+            "authType": "default",
+            "includeDatabases": null,
+            "database": null
+        },
+        "1645210213402": {
             "host": "127.0.0.1",
             "dbPath": "/home/yeray/Proyectos/DEW/Proyecto 10/server/database.sqlite",
             "port": "3306",
@@ -13,6 +50,7 @@
             "caPath": null,
             "database": null,
             "useSSL": false,
+            "useClearText": false,
             "usingSSH": false,
             "showHidden": false,
             "includeDatabases": null,
@@ -23,7 +61,7 @@
             "srv": false,
             "esAuth": "none",
             "global": false,
-            "key": "1644179465178",
+            "key": "1645210213402",
             "timezone": "+00:00",
             "ssh": {
                 "host": "",

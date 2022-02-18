@@ -16,13 +16,13 @@ Vue.component('login', {
                     <input type="submit" class="btn btn-primary btn-block" value="Login">
                 </div>
                 <div class="loginbox-register">
-                    <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.pageChanger(5)}">Register</button>
+                    <button class="btn btn-link text-reset shadow-none" v-on:click="() => {this.changePage(5)}">Register</button>
                 </div>
             </form>
         </div>
     </div>
     `,
-    props: ['pageChanger', 'getCookie', 'setCookie'],
+    props: ['changePage', 'isUserLogged', 'createSession'],
     data: function () {
         return {
             email: '',
@@ -30,8 +30,8 @@ Vue.component('login', {
         }
     },
     mounted: function () {
-        if (this.getCookie('user_id').length > 0) {
-            this.pageChanger(1);
+        if (this.isUserLogged) {
+            this.changePage(1);
         }
     },
     methods: {
@@ -52,8 +52,7 @@ Vue.component('login', {
                             title: data.message
                         })
                     } else {
-                        this.setCookie('user_id', data.id, 1);
-                        this.pageChanger(1);
+                        this.createSession(data.id);
                     }
                 },
                 error: () => {
